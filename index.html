@@ -1,0 +1,4060 @@
+<!DOCTYPE html>
+<html lang="en">
+<h1>fahhhh</h1>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CandyJar ✦</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Space+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box
+        }
+
+        :root {
+            --bg: #1a1218;
+            --bg2: #211820;
+            --bg3: #2a1f28;
+            --surface: #2e2230;
+            --surface2: #3a2a3d;
+            --border: #4a3350;
+            --border2: #5a3f64;
+            --text: #f0e8f5;
+            --text2: #c4afd4;
+            --text3: #8a7099;
+            --accent: #c0a0f0;
+            --accent2: #f5a0c8;
+            --accent3: #f0c080;
+            --glow: rgba(192, 160, 240, 0.2);
+            --jar-tint: rgba(180, 160, 220, 0.04);
+            --jar-stroke: rgba(200, 180, 240, 0.3);
+            --xp-color: #c0a0f0;
+            --coin-color: #f0c080
+        }
+
+        [data-theme="midnight"] {
+            --bg: #0d1117;
+            --bg2: #161b22;
+            --bg3: #1c2128;
+            --surface: #21262d;
+            --surface2: #2d333b;
+            --border: #30363d;
+            --border2: #484f58;
+            --text: #e6edf3;
+            --text2: #8b949e;
+            --text3: #656d76;
+            --accent: #58a6ff;
+            --accent2: #79c0ff;
+            --accent3: #ffa657;
+            --glow: rgba(88, 166, 255, 0.2);
+            --jar-tint: rgba(88, 166, 255, 0.03);
+            --jar-stroke: rgba(88, 166, 255, 0.25)
+        }
+
+        [data-theme="forest"] {
+            --bg: #0a1a0f;
+            --bg2: #0d2014;
+            --bg3: #102817;
+            --surface: #143320;
+            --surface2: #1a422a;
+            --border: #245c38;
+            --border2: #2e7a4a;
+            --text: #d4f0dc;
+            --text2: #90c9a0;
+            --text3: #5a8a6a;
+            --accent: #52d68a;
+            --accent2: #a8f0c0;
+            --accent3: #f0d860;
+            --glow: rgba(82, 214, 138, 0.2);
+            --jar-tint: rgba(82, 214, 138, 0.03);
+            --jar-stroke: rgba(82, 214, 138, 0.25)
+        }
+
+        [data-theme="sunset"] {
+            --bg: #1a0e0a;
+            --bg2: #221410;
+            --bg3: #2a1a14;
+            --surface: #32201a;
+            --surface2: #402820;
+            --border: #5c3828;
+            --border2: #7a4c38;
+            --text: #f5e8e0;
+            --text2: #d4a090;
+            --text3: #8a6050;
+            --accent: #f07040;
+            --accent2: #f0a070;
+            --accent3: #f0d080;
+            --glow: rgba(240, 112, 64, 0.2);
+            --jar-tint: rgba(240, 112, 64, 0.03);
+            --jar-stroke: rgba(240, 160, 112, 0.25)
+        }
+
+        [data-theme="ocean"] {
+            --bg: #080f1a;
+            --bg2: #0c1422;
+            --bg3: #101c2e;
+            --surface: #142038;
+            --surface2: #1c2e4a;
+            --border: #243c5e;
+            --border2: #2e4e7a;
+            --text: #d0e8f8;
+            --text2: #80b0d8;
+            --text3: #406080;
+            --accent: #40a8f0;
+            --accent2: #80c8f8;
+            --accent3: #f0d860;
+            --glow: rgba(64, 168, 240, 0.2);
+            --jar-tint: rgba(64, 168, 240, 0.03);
+            --jar-stroke: rgba(64, 168, 240, 0.25)
+        }
+
+        [data-theme="sakura"] {
+            --bg: #1a0e14;
+            --bg2: #22121c;
+            --bg3: #2a1828;
+            --surface: #32202e;
+            --surface2: #40283c;
+            --border: #5c3850;
+            --border2: #7a4a68;
+            --text: #f8e8f4;
+            --text2: #d8a0c0;
+            --text3: #906080;
+            --accent: #f080b0;
+            --accent2: #f8b0d0;
+            --accent3: #f0e080;
+            --glow: rgba(240, 128, 176, 0.2);
+            --jar-tint: rgba(240, 128, 176, 0.03);
+            --jar-stroke: rgba(240, 128, 176, 0.25)
+        }
+
+        [data-theme="neon"] {
+            --bg: #060612;
+            --bg2: #0a0a1e;
+            --bg3: #10102a;
+            --surface: #14142e;
+            --surface2: #1e1e40;
+            --border: #2a2a60;
+            --border2: #4040a0;
+            --text: #e0e0ff;
+            --text2: #a0a0e0;
+            --text3: #6060a0;
+            --accent: #00f5ff;
+            --accent2: #ff00ff;
+            --accent3: #ffff00;
+            --glow: rgba(0, 245, 255, 0.3);
+            --jar-tint: rgba(0, 245, 255, 0.04);
+            --jar-stroke: rgba(0, 245, 255, 0.4)
+        }
+
+        [data-theme="latte"] {
+            --bg: #f7f0e8;
+            --bg2: #ede4d8;
+            --bg3: #e4d8c8;
+            --surface: #d8c8b4;
+            --surface2: #ccb89e;
+            --border: #b8a088;
+            --border2: #a08070;
+            --text: #3c2c1c;
+            --text2: #6c5040;
+            --text3: #9c7c60;
+            --accent: #c07040;
+            --accent2: #e09060;
+            --accent3: #e0b040;
+            --glow: rgba(192, 112, 64, 0.2);
+            --jar-tint: rgba(192, 112, 64, 0.05);
+            --jar-stroke: rgba(192, 112, 64, 0.3)
+        }
+
+        [data-theme="aurora"] {
+            --bg: #041420;
+            --bg2: #081c2c;
+            --bg3: #0c2438;
+            --surface: #102c44;
+            --surface2: #163850;
+            --border: #204c60;
+            --border2: #2c6078;
+            --text: #d0f0e8;
+            --text2: #80c8b0;
+            --text3: #408060;
+            --accent: #00e8c0;
+            --accent2: #80ffe0;
+            --accent3: #e8a040;
+            --glow: rgba(0, 232, 192, 0.25);
+            --jar-tint: rgba(0, 232, 192, 0.04);
+            --jar-stroke: rgba(0, 232, 192, 0.3)
+        }
+
+        [data-theme="rose"] {
+            --bg: #1c0c10;
+            --bg2: #240f14;
+            --bg3: #2c1418;
+            --surface: #381820;
+            --surface2: #48202a;
+            --border: #6c303e;
+            --border2: #8c4050;
+            --text: #ffe8ec;
+            --text2: #f0a0b0;
+            --text3: #c06070;
+            --accent: #ff6080;
+            --accent2: #ff90a8;
+            --accent3: #ffd060;
+            --glow: rgba(255, 96, 128, 0.25);
+            --jar-tint: rgba(255, 96, 128, 0.04);
+            --jar-stroke: rgba(255, 96, 128, 0.3)
+        }
+
+        [data-theme="galaxy"] {
+            --bg: #050510;
+            --bg2: #080818;
+            --bg3: #0c0c20;
+            --surface: #101028;
+            --surface2: #181838;
+            --border: #282858;
+            --border2: #383878;
+            --text: #e8e8ff;
+            --text2: #a0a0d8;
+            --text3: #606090;
+            --accent: #a080ff;
+            --accent2: #c0a0ff;
+            --accent3: #ffc060;
+            --glow: rgba(160, 128, 255, 0.3);
+            --jar-tint: rgba(160, 128, 255, 0.05);
+            --jar-stroke: rgba(160, 128, 255, 0.4)
+        }
+
+        [data-theme="candy"] {
+            --bg: #1a0812;
+            --bg2: #240c18;
+            --bg3: #2e121e;
+            --surface: #3a1828;
+            --surface2: #4a2036;
+            --border: #6e3050;
+            --border2: #8e4068;
+            --text: #ffe0f0;
+            --text2: #f0a0c8;
+            --text3: #b06080;
+            --accent: #ff40a0;
+            --accent2: #ff80c0;
+            --accent3: #ffdf00;
+            --glow: rgba(255, 64, 160, 0.3);
+            --jar-tint: rgba(255, 64, 160, 0.04);
+            --jar-stroke: rgba(255, 64, 160, 0.35)
+        }
+
+        [data-theme="mint"] {
+            --bg: #081814;
+            --bg2: #0c2018;
+            --bg3: #102820;
+            --surface: #143428;
+            --surface2: #1a4030;
+            --border: #205838;
+            --border2: #287248;
+            --text: #d0f8e8;
+            --text2: #80d0a8;
+            --text3: #408060;
+            --accent: #00d890;
+            --accent2: #60f0b8;
+            --accent3: #f0e060;
+            --glow: rgba(0, 216, 144, 0.25);
+            --jar-tint: rgba(0, 216, 144, 0.04);
+            --jar-stroke: rgba(0, 216, 144, 0.3)
+        }
+
+        [data-theme="ember"] {
+            --bg: #180808;
+            --bg2: #200c0c;
+            --bg3: #281010;
+            --surface: #341414;
+            --surface2: #421a1a;
+            --border: #602020;
+            --border2: #802828;
+            --text: #ffe8d8;
+            --text2: #e09070;
+            --text3: #904840;
+            --accent: #ff5020;
+            --accent2: #ff8050;
+            --accent3: #ffd040;
+            --glow: rgba(255, 80, 32, 0.3);
+            --jar-tint: rgba(255, 80, 32, 0.04);
+            --jar-stroke: rgba(255, 80, 32, 0.35)
+        }
+
+        [data-theme="arctic"] {
+            --bg: #080e18;
+            --bg2: #0c1420;
+            --bg3: #101c2e;
+            --surface: #141e38;
+            --surface2: #1a2848;
+            --border: #203858;
+            --border2: #284870;
+            --text: #e0f4ff;
+            --text2: #90c8f0;
+            --text3: #4080a8;
+            --accent: #60d0ff;
+            --accent2: #a0e8ff;
+            --accent3: #ffd080;
+            --glow: rgba(96, 208, 255, 0.25);
+            --jar-tint: rgba(96, 208, 255, 0.04);
+            --jar-stroke: rgba(96, 208, 255, 0.3)
+        }
+
+        [data-theme="velvet"] {
+            --bg: #120818;
+            --bg2: #1a0c22;
+            --bg3: #22102c;
+            --surface: #2c1438;
+            --surface2: #381a48;
+            --border: #502860;
+            --border2: #683478;
+            --text: #f0d8ff;
+            --text2: #c090e0;
+            --text3: #805098;
+            --accent: #d060ff;
+            --accent2: #e898ff;
+            --accent3: #ff8060;
+            --glow: rgba(208, 96, 255, 0.3);
+            --jar-tint: rgba(208, 96, 255, 0.04);
+            --jar-stroke: rgba(208, 96, 255, 0.35)
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            overflow: hidden;
+            transition: background 0.4s, color 0.4s
+        }
+
+        .ambient {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            background: radial-gradient(ellipse 600px 400px at 20% 10%, rgba(120, 60, 160, 0.12) 0%, transparent 70%), radial-gradient(ellipse 400px 300px at 80% 80%, rgba(80, 40, 120, 0.10) 0%, transparent 70%);
+            transition: background 0.4s
+        }
+
+        canvas.dust-canvas {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            opacity: 0.6
+        }
+
+        canvas.rain-canvas {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+            opacity: 0.25
+        }
+
+        .app {
+            position: relative;
+            z-index: 10;
+            display: grid;
+            grid-template-columns: 200px 1fr 290px;
+            grid-template-rows: 56px 1fr;
+            height: 100vh;
+            overflow: hidden
+        }
+
+        .header {
+            grid-column: 1/-1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 16px;
+            background: rgba(26, 18, 24, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            z-index: 50;
+            transition: background 0.4s
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'Playfair Display', serif;
+            font-size: 19px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent2), var(--accent), var(--accent3));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text
+        }
+
+        .header-center {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            flex: 1;
+            justify-content: center
+        }
+
+        .date-display {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--text3);
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 4px 12px;
+            letter-spacing: 0.05em
+        }
+
+        .day-badge {
+            font-size: 11px;
+            color: var(--accent);
+            background: rgba(192, 160, 240, 0.12);
+            border: 1px solid var(--accent);
+            border-radius: 20px;
+            padding: 4px 10px;
+            font-weight: 600
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 5px
+        }
+
+        .hbtn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text2);
+            padding: 5px 10px;
+            border-radius: 14px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s
+        }
+
+        .hbtn:hover {
+            background: var(--surface2);
+            border-color: var(--border2);
+            color: var(--text)
+        }
+
+        .hbtn.active {
+            background: rgba(192, 160, 240, 0.15);
+            border-color: var(--accent);
+            color: var(--accent)
+        }
+
+        .xp-strip {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 0 16px;
+            height: 28px;
+            background: rgba(26, 18, 24, 0.7);
+            border-bottom: 1px solid var(--border)
+        }
+
+        .xp-label {
+            font-size: 10px;
+            color: var(--text3);
+            white-space: nowrap;
+            font-family: 'Space Mono', monospace
+        }
+
+        .xp-track {
+            flex: 1;
+            max-width: 300px;
+            height: 8px;
+            background: var(--surface2);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border)
+        }
+
+        .xp-fill {
+            height: 100%;
+            border-radius: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            transition: width 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative
+        }
+
+        .xp-fill::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: xp-shine 2s ease-in-out infinite
+        }
+
+        @keyframes xp-shine {
+            0% {
+                transform: translateX(-100%)
+            }
+
+            100% {
+                transform: translateX(100%)
+            }
+        }
+
+        .xp-level {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: 'Space Mono', monospace
+        }
+
+        .coin-display {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--coin-color);
+            background: rgba(240, 192, 128, 0.1);
+            border: 1px solid rgba(240, 192, 128, 0.25);
+            border-radius: 20px;
+            padding: 3px 10px;
+            margin-left: 4px;
+            font-family: 'Space Mono', monospace
+        }
+
+        .theme-picker {
+            position: relative
+        }
+
+        .theme-dropdown {
+            position: absolute;
+            top: calc(100% + 6px);
+            right: 0;
+            background: var(--bg2);
+            border: 1px solid var(--border2);
+            border-radius: 14px;
+            padding: 8px;
+            display: none;
+            flex-direction: column;
+            gap: 3px;
+            z-index: 600;
+            min-width: 180px;
+            max-height: 380px;
+            overflow-y: auto;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5)
+        }
+
+        .theme-dropdown.open {
+            display: flex
+        }
+
+        .theme-section-label {
+            font-size: 9px;
+            color: var(--text3);
+            padding: 4px 6px 2px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em
+        }
+
+        .theme-opt {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            color: var(--text2);
+            transition: all 0.15s
+        }
+
+        .theme-opt:hover {
+            background: var(--surface2);
+            color: var(--text)
+        }
+
+        .theme-opt.active {
+            background: rgba(192, 160, 240, 0.15);
+            color: var(--accent)
+        }
+
+        .theme-swatch {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            flex-shrink: 0
+        }
+
+        .theme-lock {
+            font-size: 9px;
+            margin-left: auto;
+            opacity: 0.6
+        }
+
+        .sidebar {
+            background: rgba(26, 18, 24, 0.65);
+            border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow-y: auto;
+            overflow-x: hidden;
+            transition: background 0.4s
+        }
+
+        .nav-section {
+            padding: 12px 14px 3px;
+            font-size: 9px;
+            color: var(--text3);
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            font-weight: 500
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 7px 14px;
+            cursor: pointer;
+            color: var(--text2);
+            font-size: 12px;
+            border-left: 2px solid transparent;
+            transition: all 0.18s;
+            position: relative
+        }
+
+        .nav-item:hover {
+            background: rgba(192, 160, 240, 0.07);
+            color: var(--text)
+        }
+
+        .nav-item.active {
+            background: rgba(192, 160, 240, 0.12);
+            border-left-color: var(--accent);
+            color: var(--text)
+        }
+
+        .nav-icon {
+            width: 17px;
+            text-align: center;
+            font-size: 13px
+        }
+
+        .nav-badge {
+            margin-left: auto;
+            background: var(--accent);
+            color: #fff;
+            font-size: 9px;
+            padding: 1px 5px;
+            border-radius: 8px;
+            font-weight: 600
+        }
+
+        .mood-bar {
+            margin: 6px 10px 0;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 9px
+        }
+
+        .mood-label {
+            font-size: 9px;
+            color: var(--text3);
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em
+        }
+
+        .mood-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3px
+        }
+
+        .mood-btn {
+            padding: 3px 7px;
+            border-radius: 8px;
+            font-size: 10px;
+            cursor: pointer;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            color: var(--text2);
+            transition: all 0.2s
+        }
+
+        .mood-btn:hover,
+        .mood-btn.active {
+            background: rgba(192, 160, 240, 0.2);
+            border-color: var(--accent);
+            color: var(--text)
+        }
+
+        .sidebar-clock {
+            padding: 8px 14px;
+            margin-top: auto;
+            font-size: 11px;
+            color: var(--text3);
+            text-align: center;
+            line-height: 1.6;
+            border-top: 1px solid var(--border);
+            font-family: 'Space Mono', monospace
+        }
+
+        .overload-warning {
+            margin: 6px 10px;
+            background: linear-gradient(135deg, rgba(240, 80, 60, 0.2), rgba(240, 120, 40, 0.15));
+            border: 1px solid rgba(240, 80, 60, 0.4);
+            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 10px;
+            color: #f08060;
+            display: none;
+            animation: pulse-warn 1.5s ease-in-out infinite
+        }
+
+        @keyframes pulse-warn {
+
+            0%,
+            100% {
+                opacity: 1
+            }
+
+            50% {
+                opacity: 0.6
+            }
+        }
+
+        .overload-warning.visible {
+            display: block
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 12px;
+            overflow-y: auto;
+            position: relative;
+            min-height: 0
+        }
+
+        .stats-strip {
+            display: flex;
+            gap: 5px;
+            width: 100%;
+            max-width: 480px;
+            margin-bottom: 10px
+        }
+
+        .stat-pill {
+            flex: 1;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 6px 7px;
+            text-align: center;
+            transition: all 0.3s
+        }
+
+        .stat-pill .val {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text);
+            font-family: 'Space Mono', monospace
+        }
+
+        .stat-pill .lbl {
+            font-size: 9px;
+            color: var(--text3);
+            margin-top: 1px
+        }
+
+        .streak-banner {
+            background: linear-gradient(135deg, rgba(255, 200, 0, 0.15), rgba(255, 150, 0, 0.1));
+            border: 1px solid rgba(255, 200, 0, 0.3);
+            border-radius: 10px;
+            padding: 6px 12px;
+            display: none;
+            align-items: center;
+            gap: 7px;
+            font-size: 11px;
+            color: #f0c040;
+            margin-bottom: 10px;
+            animation: pulse-glow 2s ease-in-out infinite
+        }
+
+        .streak-banner.visible {
+            display: flex
+        }
+
+        @keyframes pulse-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 200, 0, 0)
+            }
+
+            50% {
+                box-shadow: 0 0 16px rgba(255, 200, 0, 0.2)
+            }
+        }
+
+        .jar-outer {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center
+        }
+
+        .jar-container {
+            position: relative;
+            width: 280px;
+            height: 360px;
+            filter: drop-shadow(0 16px 48px rgba(0, 0, 0, 0.5));
+            cursor: pointer;
+            flex-shrink: 0
+        }
+
+        .jar-svg {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            width: 100%;
+            height: 100%
+        }
+
+        .candy-canvas {
+            position: absolute;
+            left: 36px;
+            top: 42px;
+            width: 208px;
+            height: 288px;
+            border-radius: 0 0 84px 84px;
+            overflow: hidden
+        }
+
+        .jar-fill-bar {
+            position: absolute;
+            right: -28px;
+            top: 42px;
+            width: 6px;
+            height: 288px;
+            background: var(--surface2);
+            border-radius: 3px;
+            border: 1px solid var(--border);
+            overflow: hidden
+        }
+
+        .jar-fill-level {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(0deg, var(--accent), var(--accent2));
+            border-radius: 3px;
+            transition: height 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)
+        }
+
+        .candy-item {
+            position: absolute;
+            cursor: pointer;
+            user-select: none;
+            transform-origin: center;
+            transition: filter 0.2s;
+            will-change: transform
+        }
+
+        .candy-item:hover {
+            z-index: 50 !important
+        }
+
+        .candy-item.completing {
+            animation: candy-eat 0.7s forwards !important
+        }
+
+        @keyframes candy-eat {
+            0% {
+                transform: scale(1) rotate(0deg)
+            }
+
+            20% {
+                transform: scale(1.4) rotate(-10deg)
+            }
+
+            50% {
+                transform: scale(0.8) rotate(20deg);
+                opacity: 0.6
+            }
+
+            80% {
+                transform: scale(0.2) rotate(180deg);
+                opacity: 0.2
+            }
+
+            100% {
+                transform: scale(0);
+                opacity: 0
+            }
+        }
+
+        .candy-item.dropping {
+            animation: candy-drop var(--drop-dur, 0.8s) cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards
+        }
+
+        @keyframes candy-drop {
+            0% {
+                transform: translateY(-220px) rotate(var(--start-r, 0deg));
+                opacity: 0
+            }
+
+            55% {
+                opacity: 1
+            }
+
+            75% {
+                transform: translateY(var(--land-y, 0px)) rotate(var(--land-r, 0deg)) scaleY(0.8) scaleX(1.1)
+            }
+
+            85% {
+                transform: translateY(calc(var(--land-y, 0px) - 12px)) rotate(var(--land-r, 0deg)) scaleY(1.08) scaleX(0.95)
+            }
+
+            92% {
+                transform: translateY(calc(var(--land-y, 0px) + 3px)) rotate(var(--land-r, 0deg)) scaleY(0.96) scaleX(1.02)
+            }
+
+            100% {
+                transform: translateY(var(--land-y, 0px)) rotate(var(--land-r, 0deg))
+            }
+        }
+
+        .candy-item.bouncing {
+            animation: bounce-idle 2s ease-in-out infinite
+        }
+
+        @keyframes bounce-idle {
+
+            0%,
+            100% {
+                transform: var(--base-t, rotate(0deg)) translateY(0)
+            }
+
+            50% {
+                transform: var(--base-t, rotate(0deg)) translateY(-3px)
+            }
+        }
+
+        @keyframes jar-shake {
+
+            0%,
+            100% {
+                transform: rotate(0deg) translateX(0)
+            }
+
+            10% {
+                transform: rotate(-7deg) translateX(-8px)
+            }
+
+            20% {
+                transform: rotate(7deg) translateX(8px)
+            }
+
+            30% {
+                transform: rotate(-5deg) translateX(-6px)
+            }
+
+            40% {
+                transform: rotate(5deg) translateX(6px)
+            }
+
+            50% {
+                transform: rotate(-3deg) translateX(-4px)
+            }
+
+            60% {
+                transform: rotate(3deg) translateX(4px)
+            }
+
+            70% {
+                transform: rotate(-2deg) translateX(-2px)
+            }
+
+            80% {
+                transform: rotate(2deg) translateX(2px)
+            }
+
+            90% {
+                transform: rotate(-1deg)
+            }
+        }
+
+        .jar-shaking {
+            animation: jar-shake 0.85s ease-in-out
+        }
+
+        .jar-leaking .candy-canvas {
+            filter: sepia(0.8) saturate(0.3) brightness(0.7);
+            transition: filter 1s
+        }
+
+        .jar-actions {
+            display: flex;
+            gap: 7px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+            justify-content: center
+        }
+
+        .jar-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text2);
+            padding: 6px 13px;
+            border-radius: 14px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 5px
+        }
+
+        .jar-btn:hover {
+            background: var(--surface2);
+            border-color: var(--border2);
+            color: var(--text);
+            transform: translateY(-2px)
+        }
+
+        .jar-btn.special {
+            background: linear-gradient(135deg, rgba(192, 160, 240, 0.2), rgba(245, 160, 200, 0.15));
+            border-color: var(--accent);
+            color: var(--accent)
+        }
+
+        .jar-btn.special:hover {
+            background: linear-gradient(135deg, rgba(192, 160, 240, 0.32), rgba(245, 160, 200, 0.25));
+            transform: translateY(-2px)
+        }
+
+        .sugar-rush {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0
+        }
+
+        .sugar-rush.active {
+            animation: rush-fade 3.2s forwards
+        }
+
+        @keyframes rush-fade {
+            0% {
+                opacity: 0
+            }
+
+            8% {
+                opacity: 1
+            }
+
+            65% {
+                opacity: 1
+            }
+
+            100% {
+                opacity: 0
+            }
+        }
+
+        .rush-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 50px;
+            font-weight: 700;
+            background: linear-gradient(135deg, #ffd700, #f0c080, #f5a0c8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(0 0 24px rgba(255, 200, 0, 0.6));
+            animation: rush-bounce 0.5s ease-out
+        }
+
+        @keyframes rush-bounce {
+            0% {
+                transform: scale(0) rotate(-12deg)
+            }
+
+            60% {
+                transform: scale(1.25) rotate(4deg)
+            }
+
+            100% {
+                transform: scale(1) rotate(0)
+            }
+        }
+
+        .candy-tooltip {
+            position: fixed;
+            background: var(--bg2);
+            border: 1px solid var(--border2);
+            border-radius: 12px;
+            padding: 10px 14px;
+            pointer-events: none;
+            z-index: 300;
+            min-width: 170px;
+            max-width: 220px;
+            box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            transition: opacity 0.12s;
+            font-size: 11px
+        }
+
+        .candy-tooltip.visible {
+            opacity: 1
+        }
+
+        .tt-name {
+            font-weight: 600;
+            color: var(--text);
+            margin-bottom: 3px;
+            font-size: 12px
+        }
+
+        .tt-type {
+            font-size: 9px;
+            color: var(--text3);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em
+        }
+
+        .tt-row {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text2);
+            font-size: 10px;
+            margin-bottom: 2px
+        }
+
+        .tt-row span:last-child {
+            color: var(--text)
+        }
+
+        .tt-hint {
+            font-size: 9px;
+            color: var(--text3);
+            margin-top: 6px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            padding-top: 5px
+        }
+
+        .right-panel {
+            background: rgba(26, 18, 24, 0.65);
+            border-left: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: background 0.4s
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+            flex-shrink: 0;
+            overflow-x: auto
+        }
+
+        .tab {
+            flex: 1;
+            padding: 9px 4px;
+            text-align: center;
+            cursor: pointer;
+            font-size: 10px;
+            color: var(--text3);
+            transition: all 0.2s;
+            border-bottom: 2px solid transparent;
+            white-space: nowrap;
+            min-width: 50px
+        }
+
+        .tab:hover {
+            color: var(--text2)
+        }
+
+        .tab.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent)
+        }
+
+        .tab-panel {
+            display: none;
+            flex: 1;
+            overflow-y: auto;
+            padding: 12px
+        }
+
+        .tab-panel.active {
+            display: flex;
+            flex-direction: column;
+            gap: 10px
+        }
+
+        .panel-section {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 11px
+        }
+
+        .panel-title {
+            font-size: 10px;
+            color: var(--text3);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 9px;
+            font-weight: 500
+        }
+
+        .add-btn {
+            width: calc(100% - 24px);
+            margin: 0 12px 12px;
+            flex-shrink: 0;
+            padding: 8px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(192, 160, 240, 0.25), rgba(245, 160, 200, 0.15));
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500
+        }
+
+        .add-btn:hover {
+            background: linear-gradient(135deg, rgba(192, 160, 240, 0.35), rgba(245, 160, 200, 0.25));
+            transform: translateY(-1px)
+        }
+
+        .task-mini {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border);
+            cursor: pointer;
+            transition: all 0.18s
+        }
+
+        .task-mini:last-child {
+            border-bottom: none
+        }
+
+        .task-mini:hover {
+            padding-left: 3px
+        }
+
+        .task-candy-icon {
+            font-size: 15px;
+            flex-shrink: 0
+        }
+
+        .task-mini-info {
+            flex: 1;
+            min-width: 0
+        }
+
+        .task-mini-name {
+            font-size: 11px;
+            color: var(--text);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis
+        }
+
+        .task-mini-meta {
+            font-size: 9px;
+            color: var(--text3);
+            margin-top: 1px
+        }
+
+        .task-complete-btn {
+            background: none;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            color: var(--text3);
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            flex-shrink: 0
+        }
+
+        .task-complete-btn:hover {
+            background: rgba(144, 212, 160, 0.2);
+            border-color: #90d4a0;
+            color: #90d4a0
+        }
+
+        .fortune-candy-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            width: 100%;
+            padding: 7px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 150, 0, 0.07));
+            border: 1px solid rgba(255, 215, 0, 0.25);
+            color: var(--accent3);
+            font-size: 11px;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.2s;
+            margin-bottom: 8px
+        }
+
+        .fortune-candy-btn:hover {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.17), rgba(255, 150, 0, 0.13));
+            transform: translateY(-1px)
+        }
+
+        .fortune-candy-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none
+        }
+
+        .fortune {
+            text-align: center;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.07), rgba(255, 150, 0, 0.04));
+            border: 1px solid rgba(255, 215, 0, 0.18);
+            border-radius: 12px;
+            padding: 11px
+        }
+
+        .fortune-icon {
+            font-size: 26px;
+            margin-bottom: 5px;
+            display: block
+        }
+
+        .fortune-quote {
+            font-size: 11px;
+            color: var(--text2);
+            line-height: 1.5;
+            font-style: italic
+        }
+
+        .fortune-author {
+            font-size: 9px;
+            color: var(--text3);
+            margin-top: 4px
+        }
+
+        .prog-bar-wrap {
+            margin-bottom: 9px
+        }
+
+        .prog-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: var(--text2);
+            margin-bottom: 3px
+        }
+
+        .prog-track {
+            height: 5px;
+            background: var(--surface2);
+            border-radius: 3px;
+            overflow: hidden
+        }
+
+        .prog-fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.5s cubic-bezier(0.34, 1.56, 0.64, 1)
+        }
+
+        .prog-fill.purple {
+            background: linear-gradient(90deg, var(--accent), var(--accent2))
+        }
+
+        .prog-fill.green {
+            background: linear-gradient(90deg, #52d68a, #90d4a0)
+        }
+
+        .prog-fill.amber {
+            background: linear-gradient(90deg, #f0a020, #f0d060)
+        }
+
+        .stat-card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 7px;
+            margin-bottom: 4px
+        }
+
+        .stat-card {
+            background: var(--surface2);
+            border-radius: 8px;
+            padding: 9px;
+            text-align: center
+        }
+
+        .stat-card .big {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--accent);
+            font-family: 'Space Mono', monospace
+        }
+
+        .stat-card .sm {
+            font-size: 9px;
+            color: var(--text3);
+            margin-top: 2px
+        }
+
+        .achievement {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px;
+            background: var(--surface2);
+            border-radius: 8px;
+            margin-bottom: 5px
+        }
+
+        .ach-icon {
+            font-size: 18px;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--surface);
+            border-radius: 6px;
+            flex-shrink: 0
+        }
+
+        .ach-info {
+            flex: 1;
+            min-width: 0
+        }
+
+        .ach-name {
+            font-size: 11px;
+            color: var(--text);
+            font-weight: 500
+        }
+
+        .ach-desc {
+            font-size: 9px;
+            color: var(--text3);
+            margin-top: 1px
+        }
+
+        .ach-locked {
+            opacity: 0.45
+        }
+
+        .notes-area {
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 9px 11px;
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            resize: none;
+            outline: none;
+            min-height: 140px;
+            line-height: 1.6;
+            transition: border-color 0.2s
+        }
+
+        .notes-area:focus {
+            border-color: var(--border2)
+        }
+
+        .notes-area::placeholder {
+            color: var(--text3)
+        }
+
+        .friend-jar {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px;
+            background: var(--surface2);
+            border-radius: 10px;
+            margin-bottom: 7px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid transparent
+        }
+
+        .friend-jar:hover {
+            border-color: var(--border2);
+            transform: translateX(2px)
+        }
+
+        .friend-avatar {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 17px;
+            flex-shrink: 0
+        }
+
+        .friend-info {
+            flex: 1;
+            min-width: 0
+        }
+
+        .friend-name {
+            font-size: 12px;
+            color: var(--text);
+            font-weight: 500
+        }
+
+        .friend-stat {
+            font-size: 9px;
+            color: var(--text3);
+            margin-top: 2px
+        }
+
+        .online-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #52d68a;
+            flex-shrink: 0;
+            box-shadow: 0 0 4px #52d68a
+        }
+
+        .candy-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 7px
+        }
+
+        .candy-collect {
+            background: var(--surface2);
+            border-radius: 10px;
+            padding: 7px;
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: all 0.2s;
+            cursor: pointer
+        }
+
+        .candy-collect:hover {
+            border-color: var(--border2);
+            transform: scale(1.05)
+        }
+
+        .candy-collect.locked {
+            opacity: 0.35;
+            filter: grayscale(1)
+        }
+
+        .candy-collect .ce {
+            font-size: 20px;
+            display: block;
+            margin-bottom: 2px
+        }
+
+        .candy-collect .cn {
+            font-size: 8px;
+            color: var(--text3)
+        }
+
+        .candy-collect .cc {
+            font-size: 9px;
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 1px
+        }
+
+        .sound-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid var(--border)
+        }
+
+        .sound-row:last-child {
+            border-bottom: none
+        }
+
+        .sound-name {
+            font-size: 11px;
+            color: var(--text2)
+        }
+
+        .sound-toggle {
+            width: 30px;
+            height: 17px;
+            border-radius: 9px;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.2s
+        }
+
+        .sound-toggle.on {
+            background: var(--accent);
+            border-color: var(--accent)
+        }
+
+        .sound-toggle::after {
+            content: '';
+            position: absolute;
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            background: white;
+            top: 2px;
+            left: 2px;
+            transition: left 0.2s
+        }
+
+        .sound-toggle.on::after {
+            left: 15px
+        }
+
+        /* MUSIC PLAYER */
+        .music-player {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 8px
+        }
+
+        .music-track-name {
+            font-size: 12px;
+            color: var(--text);
+            font-weight: 500;
+            margin-bottom: 6px;
+            text-align: center
+        }
+
+        .music-controls {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            justify-content: center;
+            margin-bottom: 8px
+        }
+
+        .music-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text2);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s
+        }
+
+        .music-btn:hover {
+            background: var(--surface2);
+            border-color: var(--border2);
+            color: var(--text)
+        }
+
+        .music-btn.play {
+            background: linear-gradient(135deg, rgba(192, 160, 240, 0.3), rgba(245, 160, 200, 0.2));
+            border-color: var(--accent);
+            color: var(--accent);
+            width: 34px;
+            height: 34px;
+            font-size: 13px
+        }
+
+        .music-btn.play:hover {
+            background: linear-gradient(135deg, rgba(192, 160, 240, 0.5), rgba(245, 160, 200, 0.35))
+        }
+
+        .music-progress {
+            height: 3px;
+            background: var(--surface);
+            border-radius: 2px;
+            overflow: hidden;
+            margin-bottom: 5px;
+            cursor: pointer
+        }
+
+        .music-progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+            width: 0%;
+            transition: width 0.1s linear
+        }
+
+        .music-track-list {
+            max-height: 120px;
+            overflow-y: auto
+        }
+
+        .music-track-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+            padding: 5px 7px;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: all 0.15s;
+            font-size: 11px;
+            color: var(--text2)
+        }
+
+        .music-track-item:hover {
+            background: var(--surface);
+            color: var(--text)
+        }
+
+        .music-track-item.active {
+            background: rgba(192, 160, 240, 0.15);
+            color: var(--accent)
+        }
+
+        .music-track-icon {
+            font-size: 13px;
+            flex-shrink: 0
+        }
+
+        /* SHOP */
+        .shop-section-title {
+            font-size: 11px;
+            color: var(--text3);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin: 12px 0 7px
+        }
+
+        .shop-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 8px
+        }
+
+        .shop-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 11px;
+            text-align: center;
+            transition: all 0.2s;
+            position: relative
+        }
+
+        .shop-item:hover {
+            border-color: var(--border2);
+            transform: translateY(-2px)
+        }
+
+        .shop-item.owned {
+            border-color: var(--accent);
+            opacity: 0.75
+        }
+
+        .shop-item.cant-afford {
+            opacity: 0.5
+        }
+
+        .shop-icon {
+            font-size: 26px;
+            margin-bottom: 5px;
+            display: block
+        }
+
+        .shop-name {
+            font-size: 11px;
+            color: var(--text);
+            font-weight: 500;
+            margin-bottom: 3px
+        }
+
+        .shop-desc {
+            font-size: 9px;
+            color: var(--text3);
+            margin-bottom: 7px
+        }
+
+        .shop-price {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 3px;
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--coin-color);
+            font-family: 'Space Mono', monospace
+        }
+
+        .shop-buy-btn {
+            width: 100%;
+            margin-top: 6px;
+            padding: 5px;
+            border-radius: 7px;
+            background: rgba(240, 192, 128, 0.15);
+            border: 1px solid rgba(240, 192, 128, 0.35);
+            color: var(--coin-color);
+            font-size: 10px;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.2s
+        }
+
+        .shop-buy-btn:hover {
+            background: rgba(240, 192, 128, 0.28)
+        }
+
+        .shop-buy-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed
+        }
+
+        .shop-owned-badge {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            font-size: 9px;
+            color: var(--accent);
+            font-weight: 700
+        }
+
+        .shop-free-badge {
+            position: absolute;
+            top: 6px;
+            left: 6px;
+            font-size: 8px;
+            color: #52d68a;
+            background: rgba(82, 214, 138, 0.15);
+            border: 1px solid rgba(82, 214, 138, 0.3);
+            border-radius: 4px;
+            padding: 1px 4px;
+            font-weight: 600
+        }
+
+        /* TIMER */
+        .timer-mode-btns {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 10px;
+            background: var(--surface2);
+            border-radius: 10px;
+            padding: 3px
+        }
+
+        .tmode-btn {
+            flex: 1;
+            padding: 5px 4px;
+            border-radius: 7px;
+            border: none;
+            background: transparent;
+            color: var(--text3);
+            font-size: 10px;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.2s
+        }
+
+        .tmode-btn.active {
+            background: var(--surface);
+            color: var(--accent);
+            border: 1px solid var(--border)
+        }
+
+        .timer-ring {
+            width: 160px;
+            height: 160px;
+            margin: 0 auto 8px;
+            position: relative
+        }
+
+        .timer-ring svg {
+            transform: rotate(-90deg)
+        }
+
+        .ring-bg {
+            stroke: var(--surface2);
+            fill: none;
+            stroke-width: 8
+        }
+
+        .ring-prog {
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 8;
+            stroke-linecap: round;
+            transition: stroke-dashoffset 1s linear
+        }
+
+        .ring-center {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center
+        }
+
+        .ring-time {
+            font-family: 'Space Mono', monospace;
+            font-size: 28px;
+            color: var(--text);
+            line-height: 1
+        }
+
+        .ring-label {
+            font-size: 9px;
+            color: var(--text3);
+            margin-top: 3px
+        }
+
+        .timer-controls {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            margin-top: 8px
+        }
+
+        .t-btn {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text2);
+            padding: 7px 14px;
+            border-radius: 10px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-family: 'DM Sans', sans-serif
+        }
+
+        .t-btn:hover {
+            background: var(--surface2);
+            border-color: var(--border2);
+            color: var(--text)
+        }
+
+        .t-btn.primary {
+            background: linear-gradient(135deg, rgba(192, 160, 240, 0.3), rgba(245, 160, 200, 0.2));
+            border-color: var(--accent);
+            color: var(--accent);
+            font-weight: 600
+        }
+
+        .t-btn.primary:hover {
+            background: linear-gradient(135deg, rgba(192, 160, 240, 0.45), rgba(245, 160, 200, 0.35))
+        }
+
+        .timer-laps {
+            margin-top: 8px;
+            max-height: 80px;
+            overflow-y: auto
+        }
+
+        .lap-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            padding: 3px 6px;
+            border-radius: 5px;
+            color: var(--text2);
+            font-family: 'Space Mono', monospace
+        }
+
+        .lap-item:nth-child(odd) {
+            background: var(--surface2)
+        }
+
+        .timer-custom-row {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 8px;
+            align-items: center
+        }
+
+        .timer-custom-row input {
+            flex: 1;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 5px 8px;
+            color: var(--text);
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            outline: none;
+            text-align: center;
+            width: 50px
+        }
+
+        .timer-custom-row span {
+            color: var(--text3);
+            font-size: 11px
+        }
+
+        .session-log {
+            max-height: 60px;
+            overflow-y: auto;
+            margin-top: 6px
+        }
+
+        .session-item {
+            font-size: 9px;
+            color: var(--text3);
+            padding: 2px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between
+        }
+
+        .pomodoro-sessions {
+            display: flex;
+            gap: 4px;
+            justify-content: center;
+            margin-bottom: 8px
+        }
+
+        .pomo-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            transition: all 0.3s
+        }
+
+        .pomo-dot.done {
+            background: var(--accent);
+            border-color: var(--accent);
+            box-shadow: 0 0 6px var(--glow)
+        }
+
+        .pomo-dot.current {
+            background: var(--accent2);
+            border-color: var(--accent2);
+            animation: pomo-pulse 1s ease-in-out infinite
+        }
+
+        @keyframes pomo-pulse {
+
+            0%,
+            100% {
+                transform: scale(1)
+            }
+
+            50% {
+                transform: scale(1.2)
+            }
+        }
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            z-index: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.2s
+        }
+
+        .modal-overlay.open {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .modal {
+            background: var(--bg2);
+            border: 1px solid var(--border2);
+            border-radius: 18px;
+            padding: 22px;
+            width: 370px;
+            max-width: 92vw;
+            max-height: 90vh;
+            overflow-y: auto;
+            transform: translateY(20px) scale(0.97);
+            transition: transform 0.22s;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6)
+        }
+
+        .modal-overlay.open .modal {
+            transform: translateY(0) scale(1)
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 14px
+        }
+
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 17px;
+            color: var(--text)
+        }
+
+        .modal-back {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 5px 10px;
+            color: var(--text2);
+            font-size: 11px;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: all 0.2s
+        }
+
+        .modal-back:hover {
+            background: var(--surface2);
+            color: var(--text)
+        }
+
+        .candy-preview-bar {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 8px 11px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 11px
+        }
+
+        .preview-candy {
+            font-size: 20px;
+            animation: float-sm 2s ease-in-out infinite
+        }
+
+        @keyframes float-sm {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-4px)
+            }
+        }
+
+        .preview-text {
+            font-size: 11px;
+            color: var(--text2)
+        }
+
+        .form-group {
+            margin-bottom: 10px
+        }
+
+        .form-label {
+            font-size: 10px;
+            color: var(--text3);
+            margin-bottom: 4px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.06em
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 7px 11px;
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            transition: border-color 0.2s;
+            outline: none
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            border-color: var(--border2)
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 48px
+        }
+
+        .form-select option {
+            background: var(--bg2)
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 7px
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 7px;
+            margin-top: 4px
+        }
+
+        .btn-primary {
+            flex: 1;
+            padding: 8px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, rgba(192, 160, 240, 0.4), rgba(245, 160, 200, 0.3));
+            border: 1px solid var(--accent);
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            background: linear-gradient(135deg, rgba(192, 160, 240, 0.5), rgba(245, 160, 200, 0.4))
+        }
+
+        .btn-secondary {
+            padding: 8px 13px;
+            border-radius: 10px;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text2);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 12px;
+            cursor: pointer;
+            transition: all 0.2s
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--border2);
+            color: var(--text)
+        }
+
+        .ritual-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(12px);
+            z-index: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s
+        }
+
+        .ritual-overlay.open {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .ritual-box {
+            background: var(--bg2);
+            border: 1px solid var(--border2);
+            border-radius: 20px;
+            padding: 28px;
+            width: 360px;
+            max-width: 92vw;
+            text-align: center
+        }
+
+        .ritual-step-num {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            color: var(--text3);
+            margin-bottom: 8px;
+            letter-spacing: 0.1em
+        }
+
+        .ritual-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: var(--text);
+            margin-bottom: 6px
+        }
+
+        .ritual-desc {
+            font-size: 13px;
+            color: var(--text2);
+            line-height: 1.6;
+            margin-bottom: 18px
+        }
+
+        .ritual-countdown {
+            font-family: 'Space Mono', monospace;
+            font-size: 48px;
+            color: var(--accent);
+            margin: 16px 0;
+            text-shadow: 0 0 20px var(--glow)
+        }
+
+        .ritual-intent {
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px 14px;
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            outline: none;
+            margin-bottom: 14px;
+            text-align: center
+        }
+
+        .ritual-intent:focus {
+            border-color: var(--border2)
+        }
+
+        .ritual-progress {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            margin-bottom: 16px
+        }
+
+        .ritual-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            transition: all 0.3s
+        }
+
+        .ritual-dot.done {
+            background: var(--accent);
+            border-color: var(--accent)
+        }
+
+        .ritual-dot.active {
+            background: var(--accent2);
+            border-color: var(--accent2)
+        }
+
+        .synthesis-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            z-index: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s
+        }
+
+        .synthesis-overlay.open {
+            opacity: 1;
+            pointer-events: all
+        }
+
+        .synthesis-box {
+            background: var(--bg2);
+            border: 1px solid var(--border2);
+            border-radius: 18px;
+            padding: 24px;
+            width: 360px;
+            max-width: 92vw;
+            text-align: center
+        }
+
+        .synth-prompt {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            color: var(--text);
+            margin-bottom: 8px
+        }
+
+        .synth-sub {
+            font-size: 12px;
+            color: var(--text3);
+            margin-bottom: 16px
+        }
+
+        .synth-input {
+            width: 100%;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 10px 14px;
+            color: var(--text);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            outline: none;
+            text-align: center;
+            margin-bottom: 6px
+        }
+
+        .synth-input:focus {
+            border-color: var(--border2)
+        }
+
+        .synth-count {
+            font-size: 10px;
+            color: var(--text3);
+            margin-bottom: 14px
+        }
+
+        .knowledge-log {
+            max-height: 100px;
+            overflow-y: auto;
+            margin-top: 10px;
+            text-align: left
+        }
+
+        .klog-item {
+            font-size: 10px;
+            color: var(--text2);
+            padding: 4px 8px;
+            border-radius: 6px;
+            background: var(--surface);
+            margin-bottom: 4px;
+            border-left: 2px solid var(--accent)
+        }
+
+        .klog-item .klog-time {
+            color: var(--text3);
+            font-family: 'Space Mono', monospace;
+            font-size: 9px
+        }
+
+        body.zen-mode .sidebar,
+        body.zen-mode .right-panel,
+        body.zen-mode .header,
+        body.zen-mode .stats-strip,
+        body.zen-mode .streak-banner,
+        body.zen-mode .jar-actions,
+        body.zen-mode .mood-bar {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s
+        }
+
+        body.zen-mode .main {
+            align-items: center;
+            justify-content: center
+        }
+
+        .sparkle {
+            position: fixed;
+            pointer-events: none;
+            z-index: 400;
+            font-size: 12px;
+            animation: sparkle-fly var(--dur, 1s) ease-out forwards
+        }
+
+        @keyframes sparkle-fly {
+            0% {
+                transform: translate(0, 0) scale(1);
+                opacity: 1
+            }
+
+            100% {
+                transform: translate(var(--dx, 0px), var(--dy, -60px)) scale(0);
+                opacity: 0
+            }
+        }
+
+        .xp-popup {
+            position: fixed;
+            pointer-events: none;
+            z-index: 400;
+            font-family: 'Space Mono', monospace;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--accent);
+            animation: xp-pop 1.2s ease-out forwards
+        }
+
+        @keyframes xp-pop {
+            0% {
+                transform: translateY(0) scale(0.8);
+                opacity: 1
+            }
+
+            100% {
+                transform: translateY(-50px) scale(1.1);
+                opacity: 0
+            }
+        }
+
+        ::-webkit-scrollbar {
+            width: 3px
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 2px
+        }
+
+        .jar-glass-shine {
+            position: absolute;
+            top: 42px;
+            left: 36px;
+            width: 208px;
+            height: 70px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.06) 0%, transparent 100%);
+            pointer-events: none;
+            border-radius: 14px 14px 0 0;
+            z-index: 5
+        }
+
+        .view-back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            color: var(--text2);
+            padding: 6px 12px;
+            border-radius: 10px;
+            font-size: 11px;
+            cursor: pointer;
+            margin-bottom: 14px;
+            font-family: 'DM Sans', sans-serif;
+            transition: all 0.2s
+        }
+
+        .view-back-btn:hover {
+            background: var(--surface2);
+            color: var(--text);
+            border-color: var(--border2)
+        }
+
+        .jar-overload {
+            width: 240px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 4px;
+            padding: 4px 8px;
+            background: rgba(240, 80, 60, 0.08);
+            border: 1px solid rgba(240, 80, 60, 0.2);
+            border-radius: 8px;
+            opacity: 0;
+            transition: opacity 0.4s
+        }
+
+        .jar-overload.visible {
+            opacity: 1;
+            animation: overload-flash 2s ease-in-out infinite
+        }
+
+        @keyframes overload-flash {
+
+            0%,
+            100% {
+                border-color: rgba(240, 80, 60, 0.3)
+            }
+
+            50% {
+                border-color: rgba(240, 80, 60, 0.7);
+                background: rgba(240, 80, 60, 0.14)
+            }
+        }
+
+        .overload-text {
+            font-size: 10px;
+            color: #f08060;
+            flex: 1
+        }
+
+        .overload-bar {
+            flex: 1;
+            height: 4px;
+            background: var(--surface2);
+            border-radius: 2px;
+            overflow: hidden
+        }
+
+        .overload-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #f0d060, #f09040, #f06040);
+            border-radius: 2px;
+            transition: width 0.5s
+        }
+
+        @keyframes notif-sl {
+            from {
+                transform: translateX(50px);
+                opacity: 0
+            }
+
+            to {
+                transform: translateX(0);
+                opacity: 1
+            }
+        }
+
+        /* ── MOBILE RESPONSIVE ── */
+        @media(max-width:768px) {
+            body {
+                overflow-y: auto;
+                overflow-x: hidden
+            }
+
+            .app {
+                grid-template-columns: 1fr !important;
+                grid-template-rows: 56px auto 1fr !important;
+                height: auto;
+                min-height: 100vh;
+                overflow: visible
+            }
+
+            .sidebar {
+                grid-row: 2;
+                grid-column: 1;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                overflow-y: hidden;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+                padding: 4px 6px;
+                gap: 2px;
+                max-height: 52px;
+                min-height: 52px;
+                align-items: center
+            }
+
+            .sidebar .nav-section,
+            .sidebar .mood-bar,
+            .sidebar .sidebar-clock,
+            .sidebar .overload-warning,
+            .sidebar div[style*="margin-top:auto"] {
+                display: none !important
+            }
+
+            .nav-item {
+                padding: 5px 9px;
+                border-left: none !important;
+                border-bottom: 2px solid transparent;
+                border-radius: 8px;
+                font-size: 11px;
+                flex-shrink: 0;
+                white-space: nowrap
+            }
+
+            .nav-item.active {
+                border-left: none !important;
+                border-bottom-color: var(--accent) !important
+            }
+
+            .main {
+                grid-row: 3;
+                grid-column: 1;
+                padding: 10px 8px;
+                overflow-y: auto;
+                align-items: center;
+                min-height: 0
+            }
+
+            .right-panel {
+                display: none !important
+            }
+
+            .xp-strip {
+                flex-wrap: wrap;
+                gap: 4px
+            }
+
+            .xp-track {
+                max-width: 130px
+            }
+
+            .stats-strip {
+                gap: 4px;
+                max-width: 320px
+            }
+
+            .stat-pill {
+                padding: 5px 4px
+            }
+
+            .stat-pill .val {
+                font-size: 14px
+            }
+
+            .stat-pill .lbl {
+                font-size: 8px
+            }
+
+            .jar-container {
+                width: 260px;
+                height: 336px
+            }
+
+            .candy-canvas {
+                left: 33px !important;
+                top: 38px !important;
+                width: 194px !important;
+                height: 270px !important;
+                border-radius: 0 0 80px 80px !important
+            }
+
+            .jar-glass-shine {
+                top: 38px !important;
+                left: 33px !important;
+                width: 194px !important
+            }
+
+            .jar-fill-bar {
+                right: -22px;
+                top: 38px !important;
+                height: 270px !important
+            }
+
+            .jar-overload {
+                width: 260px
+            }
+
+            .jar-actions {
+                gap: 5px;
+                padding: 0 4px
+            }
+
+            .jar-btn {
+                padding: 5px 9px;
+                font-size: 10px
+            }
+
+            .streak-banner {
+                font-size: 10px;
+                padding: 5px 10px
+            }
+
+            .view-back-btn {
+                padding: 5px 10px;
+                font-size: 10px
+            }
+
+            .modal,
+            .ritual-box,
+            .synthesis-box {
+                width: 94vw !important;
+                max-width: 94vw !important;
+                padding: 16px
+            }
+
+            .form-row {
+                grid-template-columns: 1fr !important
+            }
+
+            .shop-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            h2[style*="font-size:19px"] {
+                font-size: 16px !important
+            }
+
+            #view-tasks,
+            #view-progress,
+            #view-collection,
+            #view-friends,
+            #view-notes {
+                max-width: 100% !important;
+                width: 100% !important
+            }
+
+            .header-center {
+                display: none
+            }
+
+            .hbtn {
+                padding: 4px 7px;
+                font-size: 10px
+            }
+
+            .coin-display {
+                padding: 2px 7px;
+                font-size: 10px
+            }
+
+            .xp-label,
+            .xp-level {
+                font-size: 9px
+            }
+
+            .mobile-mood-bar {
+                display: flex !important
+            }
+        }
+
+        @media(max-width:480px) {
+            .jar-container {
+                width: 220px;
+                height: 284px
+            }
+
+            .candy-canvas {
+                left: 28px !important;
+                top: 33px !important;
+                width: 164px !important;
+                height: 222px !important;
+                border-radius: 0 0 66px 66px !important
+            }
+
+            .jar-glass-shine {
+                top: 33px !important;
+                left: 28px !important;
+                width: 164px !important
+            }
+
+            .jar-fill-bar {
+                right: -16px;
+                top: 33px !important;
+                height: 222px !important
+            }
+
+            .jar-actions {
+                gap: 4px
+            }
+
+            .jar-btn {
+                padding: 4px 7px;
+                font-size: 9px
+            }
+
+            .stats-strip {
+                max-width: 260px
+            }
+
+            .stat-pill .val {
+                font-size: 12px
+            }
+        }
+
+        /* Mobile mood bar shown below jar */
+        .mobile-mood-bar {
+            display: none;
+            flex-wrap: wrap;
+            gap: 4px;
+            justify-content: center;
+            margin-top: 8px;
+            padding: 8px 10px;
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            width: 100%;
+            max-width: 280px
+        }
+
+        .mobile-mood-bar .mood-label {
+            width: 100%;
+            font-size: 9px;
+            color: var(--text3);
+            text-align: center;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 0.06em
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ambient"></div>
+    <canvas class="dust-canvas" id="dustCanvas"></canvas>
+    <canvas class="rain-canvas" id="rainCanvas"></canvas>
+    <div class="sugar-rush" id="sugarRush">
+        <div class="rush-text" id="rushText">🍬 SUGAR RUSH!</div>
+    </div>
+    <div class="candy-tooltip" id="candyTooltip">
+        <div class="tt-name" id="tt-name"></div>
+        <div class="tt-type" id="tt-type"></div>
+        <div class="tt-row"><span>⏱ Time</span><span id="tt-time"></span></div>
+        <div class="tt-row"><span>📅 Due</span><span id="tt-due"></span></div>
+        <div class="tt-row"><span>🏷 Mood</span><span id="tt-mood"></span></div>
+        <div class="tt-hint">Double-click to complete · Click to highlight</div>
+    </div>
+    <!-- ADD TASK MODAL -->
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">🍬 Drop a new candy</div><button class="modal-back" onclick="closeModal()">←
+                    Back</button>
+            </div>
+            <div class="candy-preview-bar"><span class="preview-candy" id="previewCandy">🍬</span><span
+                    class="preview-text" id="previewText">Pick size & mood</span></div>
+            <div class="form-group"><label class="form-label">Task name</label><input class="form-input" id="taskName"
+                    placeholder="What needs to get done?" autocomplete="off"></div>
+            <div class="form-row">
+                <div class="form-group"><label class="form-label">Size</label>
+                    <select class="form-select" id="taskSize" onchange="updatePreview()">
+                        <option value="tiny">🟡 Tiny — Jellybean</option>
+                        <option value="small">🔵 Small — Drop</option>
+                        <option value="medium" selected>🍬 Medium — Wrapped</option>
+                        <option value="large">🍫 Large — Chocolate</option>
+                        <option value="massive">🍭 Massive — Lollipop</option>
+                    </select>
+                </div>
+                <div class="form-group"><label class="form-label">Mood</label>
+                    <select class="form-select" id="taskMood" onchange="updatePreview()">
+                        <option value="fun">🌸 Fun</option>
+                        <option value="study">📘 Study</option>
+                        <option value="health">🌿 Health</option>
+                        <option value="creative">✨ Creative</option>
+                        <option value="urgent">🔥 Urgent</option>
+                        <option value="painful">💀 Painful</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group"><label class="form-label">Est. time</label>
+                    <select class="form-select" id="taskTime">
+                        <option>5 min</option>
+                        <option>15 min</option>
+                        <option>30 min</option>
+                        <option>1 hr</option>
+                        <option>2 hr</option>
+                        <option>Half day</option>
+                        <option>Full day</option>
+                    </select>
+                </div>
+                <div class="form-group"><label class="form-label">Deadline</label><input class="form-input"
+                        id="taskDeadline" type="date"></div>
+            </div>
+            <div class="form-group"><label class="form-label">Notes</label><textarea class="form-textarea"
+                    id="taskNotes" placeholder="Any extra details..."></textarea></div>
+            <div class="modal-actions"><button class="btn-secondary" onclick="closeModal()">Cancel</button><button
+                    class="btn-primary" onclick="addTask()">Drop into jar ✦</button></div>
+        </div>
+    </div>
+    <!-- SHOP MODAL -->
+    <div class="modal-overlay" id="shopModal">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">🛒 Candy Shop</div><button class="modal-back" onclick="closeShop()">←
+                    Back</button>
+            </div>
+            <div
+                style="display:flex;align-items:center;gap:6px;padding:8px 12px;background:var(--surface);border-radius:8px;margin-bottom:4px">
+                <span style="font-size:13px">💰</span>
+                <span style="font-family:'Space Mono',monospace;font-size:13px;color:var(--coin-color);font-weight:700"
+                    id="shopCoinDisplay">0</span>
+                <span style="font-size:10px;color:var(--text3)">coins available</span>
+            </div>
+            <div id="shopContent"></div>
+        </div>
+    </div>
+    <!-- RITUAL MODAL -->
+    <div class="ritual-overlay" id="ritualOverlay">
+        <div class="ritual-box">
+            <div class="ritual-step-num" id="ritualStepNum">STEP 1 OF 3</div>
+            <div class="ritual-title" id="ritualTitle">🧹 Clear the Deck</div>
+            <div class="ritual-desc" id="ritualDesc">Take 60 seconds to tidy your physical workspace. Put away
+                distractions.</div>
+            <div class="ritual-countdown" id="ritualCountdown">60</div>
+            <div class="ritual-progress">
+                <div class="ritual-dot active" id="rdot0"></div>
+                <div class="ritual-dot" id="rdot1"></div>
+                <div class="ritual-dot" id="rdot2"></div>
+            </div>
+            <input class="ritual-intent" id="ritualIntentInput" placeholder="What is your one goal for this session?"
+                style="display:none" maxlength="80">
+            <button class="btn-primary" id="ritualNextBtn" onclick="ritualNext()">Start Timer →</button>
+            <button class="btn-secondary" style="margin-top:6px;width:100%" onclick="skipRitual()">Skip Ritual</button>
+        </div>
+    </div>
+    <!-- SYNTHESIS MODAL -->
+    <div class="synthesis-overlay" id="synthesisOverlay">
+        <div class="synthesis-box">
+            <div class="synth-prompt">✦ Session Complete!</div>
+            <div class="synth-sub">In 10 words or less, what did you just accomplish?</div>
+            <input class="synth-input" id="synthInput" placeholder="I finished..." maxlength="60">
+            <div class="synth-count" id="synthCount">0 / 10 words</div>
+            <div class="modal-actions" style="margin-top:8px"><button class="btn-secondary"
+                    onclick="closeSynthesis()">Skip</button><button class="btn-primary" onclick="saveSynthesis()">Save
+                    to Log ✦</button></div>
+            <div id="knowledgeLogDisplay" style="margin-top:12px"></div>
+        </div>
+    </div>
+
+    <div class="app" id="appGrid">
+        <header class="header">
+            <div class="logo">🍬 CandyJar</div>
+            <div class="header-center">
+                <div class="date-display" id="dateDisplay"></div>
+                <div class="day-badge" id="dayBadge"></div>
+            </div>
+            <div class="header-right">
+                <button class="hbtn active" id="rainBtn" onclick="toggleRain()">🌧</button>
+                <button class="hbtn" id="soundBtn" onclick="toggleSound()">🔇</button>
+                <button class="hbtn" id="zenBtn" onclick="toggleZen()">🧘</button>
+                <div class="theme-picker">
+                    <button class="hbtn" onclick="toggleThemeMenu()" id="themeBtn">🎨 Theme</button>
+                    <div class="theme-dropdown" id="themeDropdown">
+                        <div class="theme-section-label">Free Themes</div>
+                        <div class="theme-opt active" onclick="setTheme('default',this)"><span class="theme-swatch"
+                                style="background:linear-gradient(135deg,#c0a0f0,#f5a0c8)"></span>Cozy Purple</div>
+                        <div class="theme-opt" onclick="setTheme('midnight',this)"><span class="theme-swatch"
+                                style="background:linear-gradient(135deg,#58a6ff,#ffa657)"></span>Midnight</div>
+                        <div class="theme-opt" onclick="setTheme('forest',this)"><span class="theme-swatch"
+                                style="background:linear-gradient(135deg,#52d68a,#f0d860)"></span>Forest</div>
+                        <div class="theme-opt" onclick="setTheme('sunset',this)"><span class="theme-swatch"
+                                style="background:linear-gradient(135deg,#f07040,#f0d080)"></span>Sunset</div>
+                        <div class="theme-opt" onclick="setTheme('ocean',this)"><span class="theme-swatch"
+                                style="background:linear-gradient(135deg,#40a8f0,#f0d860)"></span>Ocean</div>
+                        <div class="theme-opt" onclick="setTheme('sakura',this)"><span class="theme-swatch"
+                                style="background:linear-gradient(135deg,#f080b0,#f0e080)"></span>Sakura</div>
+                        <div class="theme-section-label">Premium (Shop)</div>
+                        <div class="theme-opt" id="topt-neon" onclick="tryPremiumTheme('neon',this)"><span
+                                class="theme-swatch"
+                                style="background:linear-gradient(135deg,#00f5ff,#ff00ff)"></span>Neon City<span
+                                class="theme-lock" id="tlock-neon">🔒</span></div>
+                        <div class="theme-opt" id="topt-latte" onclick="tryPremiumTheme('latte',this)"><span
+                                class="theme-swatch"
+                                style="background:linear-gradient(135deg,#c07040,#e0b040)"></span>Latte<span
+                                class="theme-lock" id="tlock-latte">🔒</span></div>
+                        <div class="theme-opt" id="topt-aurora" onclick="tryPremiumTheme('aurora',this)"><span
+                                class="theme-swatch"
+                                style="background:linear-gradient(135deg,#00e8c0,#e8a040)"></span>Aurora<span
+                                class="theme-lock" id="tlock-aurora">🔒</span></div>
+                        <div class="theme-opt" id="topt-rose" onclick="tryPremiumTheme('rose',this)"><span
+                                class="theme-swatch"
+                                style="background:linear-gradient(135deg,#ff6080,#ffd060)"></span>Rose Gold<span
+                                class="theme-lock" id="tlock-rose">🔒</span></div>
+                        <div class="theme-opt" id="topt-galaxy" onclick="tryPremiumTheme('galaxy',this)"><span
+                                class="theme-swatch"
+                                style="background:linear-gradient(135deg,#a080ff,#ffc060)"></span>Galaxy<span
+                                class="theme-lock" id="tlock-galaxy">🔒</span></div>
+                        <div class="theme-opt" id="topt-candy" onclick="tryPremiumTheme('candy',this)"><span
+                                class="theme-swatch"
+                                style="background:linear-gradient(135deg,#ff40a0,#ffdf00)"></span>Candy Pop<span
+                                class="theme-lock" id="tlock-candy">🔒</span></div>
+                        <div class="theme-opt" id="topt-mint" onclick="tryPremiumTheme('mint',this)"><span
+                                class="theme-swatch"
+                                style="background:linear-gradient(135deg,#00d890,#f0e060)"></span>Mint<span
+                                class="theme-lock" id="tlock-mint">🔒</span></div>
+                        <div class="theme-opt" id="topt-ember" onclick="tryPremiumTheme('ember',this)"><span
+                                class="theme-swatch"
+                                style="background:linear-gradient(135deg,#ff5020,#ffd040)"></span>Ember<span
+                                class="theme-lock" id="tlock-ember">🔒</span></div>
+                        <div class="theme-opt" id="topt-arctic" onclick="tryPremiumTheme('arctic',this)"><span
+                                class="theme-swatch"
+                                style="background:linear-gradient(135deg,#60d0ff,#ffd080)"></span>Arctic<span
+                                class="theme-lock" id="tlock-arctic">🔒</span></div>
+                        <div class="theme-opt" id="topt-velvet" onclick="tryPremiumTheme('velvet',this)"><span
+                                class="theme-swatch"
+                                style="background:linear-gradient(135deg,#d060ff,#ff8060)"></span>Velvet<span
+                                class="theme-lock" id="tlock-velvet">🔒</span></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <aside class="sidebar" style="grid-row:2">
+            <div class="nav-section">Navigate</div>
+            <div class="nav-item active" data-tab="jar" onclick="setSideNav(this,'jar')"><span
+                    class="nav-icon">🫙</span>My Jar<span class="nav-badge" id="taskCountBadge">0</span></div>
+            <div class="nav-item" data-tab="tasks" onclick="setSideNav(this,'tasks')"><span
+                    class="nav-icon">📋</span>Task List</div>
+            <div class="nav-item" data-tab="progress" onclick="setSideNav(this,'progress')"><span
+                    class="nav-icon">📊</span>Progress</div>
+            <div class="nav-item" data-tab="collection" onclick="setSideNav(this,'collection')"><span
+                    class="nav-icon">🎴</span>Collection</div>
+            <div class="nav-item" data-tab="friends" onclick="setSideNav(this,'friends')"><span
+                    class="nav-icon">👥</span>Friends</div>
+            <div class="nav-item" data-tab="notes" onclick="setSideNav(this,'notes')"><span
+                    class="nav-icon">📝</span>Notes</div>
+            <div class="nav-section" style="margin-top:5px">Mood</div>
+            <div class="mood-bar">
+                <div class="mood-label">How are you feeling?</div>
+                <div class="mood-options">
+                    <button class="mood-btn active" onclick="setMood(this,'tired')">😴 Tired</button>
+                    <button class="mood-btn" onclick="setMood(this,'focused')">🎯 Focused</button>
+                    <button class="mood-btn" onclick="setMood(this,'lazy')">🦥 Lazy</button>
+                    <button class="mood-btn" onclick="setMood(this,'energetic')">⚡ Energy</button>
+                    <button class="mood-btn" onclick="setMood(this,'stressed')">😤 Stress</button>
+                </div>
+            </div>
+            <div class="overload-warning" id="overloadWarning">🚨 Jar overloading! Clear some tasks!</div>
+            <div style="display:flex;align-items:center;gap:8px;padding:8px 14px;margin-top:auto">
+                <div style="flex:1">
+                    <div style="font-size:9px;color:var(--text3);margin-bottom:3px;font-family:'Space Mono',monospace">
+                        LVL <span id="sidebarLevel">1</span></div>
+                    <div style="height:4px;background:var(--surface2);border-radius:2px;overflow:hidden">
+                        <div id="sidebarXPBar"
+                            style="height:100%;background:var(--accent);border-radius:2px;transition:width 0.5s;width:0%">
+                        </div>
+                    </div>
+                </div>
+                <div style="font-size:10px;color:var(--coin-color);font-family:'Space Mono',monospace">💰<span
+                        id="sidebarCoins">0</span></div>
+            </div>
+            <div class="sidebar-clock">🕰 <span id="clockDisplay"></span><br><span id="clockGreeting"
+                    style="font-size:9px">cozy evening energy</span></div>
+        </aside>
+
+        <main class="main" id="mainArea" style="grid-row:2">
+            <div class="xp-strip"
+                style="width:100%;max-width:480px;margin-bottom:8px;background:transparent;border:none;height:auto;padding:0">
+                <span class="xp-label">LV<span id="xpLevel">1</span></span>
+                <div class="xp-track">
+                    <div class="xp-fill" id="xpFill" style="width:0%"></div>
+                </div>
+                <span class="xp-level"><span id="xpCurrent">0</span>/<span id="xpMax">100</span></span>
+                <div class="coin-display">💰 <span id="coinDisplay">0</span></div>
+            </div>
+            <!-- JAR VIEW -->
+            <div id="view-jar" class="view" style="display:flex;flex-direction:column;align-items:center">
+                <div class="streak-banner" id="streakBanner">⚡ <strong>Sugar Rush!</strong> <span
+                        id="streakCount">3</span> in a row!</div>
+                <div class="stats-strip">
+                    <div class="stat-pill">
+                        <div class="val" id="statTotal">0</div>
+                        <div class="lbl">In Jar</div>
+                    </div>
+                    <div class="stat-pill">
+                        <div class="val" id="statDone">0</div>
+                        <div class="lbl">Eaten 🍬</div>
+                    </div>
+                    <div class="stat-pill">
+                        <div class="val" id="statStreak">0</div>
+                        <div class="lbl">Streak 🔥</div>
+                    </div>
+                    <div class="stat-pill">
+                        <div class="val" id="statRare">0</div>
+                        <div class="lbl">Rare ✦</div>
+                    </div>
+                </div>
+                <div class="jar-outer">
+                    <div class="jar-container" id="jarContainer">
+                        <svg class="jar-svg" viewBox="0 0 240 310" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <filter id="glow-filter">
+                                    <feGaussianBlur stdDeviation="3" result="blur" />
+                                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                                </filter>
+                                <linearGradient id="jarGrad" x1="0" y1="0" x2="1" y2="1">
+                                    <stop offset="0%" stop-color="rgba(255,255,255,0.08)" />
+                                    <stop offset="100%" stop-color="rgba(255,255,255,0.01)" />
+                                </linearGradient>
+                            </defs>
+                            <path d="M31 70 L31 280 Q31 305 60 305 L180 305 Q209 305 209 280 L209 70 Z"
+                                fill="var(--jar-tint)" stroke="var(--jar-stroke)" stroke-width="1.5" />
+                            <path d="M31 70 L31 280 Q31 305 60 305 L180 305 Q209 305 209 280 L209 70 Z"
+                                fill="url(#jarGrad)" />
+                            <path d="M41 80 L41 270 Q41 292 54 297" stroke="rgba(255,255,255,0.1)" stroke-width="2.5"
+                                stroke-linecap="round" fill="none" />
+                            <path d="M48 45 L192 45 Q200 45 200 55 L200 70 L40 70 L40 55 Q40 45 48 45Z"
+                                fill="rgba(180,160,220,0.07)" stroke="var(--jar-stroke)" stroke-width="1.2" />
+                            <path d="M54 26 L186 26 Q194 26 194 38 L194 45 L46 45 L46 38 Q46 26 54 26Z"
+                                fill="rgba(120,80,160,0.22)" stroke="var(--jar-stroke)" stroke-width="1.2" />
+                            <path d="M60 34 L180 34" stroke="rgba(255,255,255,0.1)" stroke-width="0.8"
+                                stroke-linecap="round" />
+                            <path d="M40 45 L200 45" stroke="rgba(255,255,255,0.13)" stroke-width="0.8" />
+                            <path d="M31 270 Q31 305 60 305 L180 305 Q209 305 209 270 Z" fill="rgba(0,0,0,0.18)" />
+                            <rect x="80" y="148" width="80" height="42" rx="4" fill="rgba(200,150,240,0.05)"
+                                stroke="var(--jar-stroke)" stroke-width="0.7" />
+                            <text x="120" y="166" text-anchor="middle" fill="rgba(200,180,240,0.25)" font-size="7"
+                                font-family="DM Sans,sans-serif" letter-spacing="1.5">CANDY</text>
+                            <text x="120" y="182" text-anchor="middle" fill="rgba(200,180,240,0.25)" font-size="9"
+                                font-family="Playfair Display,serif">JAR</text>
+                            <ellipse id="jarFog" cx="120" cy="70" rx="85" ry="16" fill="rgba(200,180,240,0)" />
+                        </svg>
+                        <div class="candy-canvas" id="candyCanvas"></div>
+                        <div class="jar-glass-shine"></div>
+                        <div class="jar-fill-bar">
+                            <div class="jar-fill-level" id="jarFillLevel" style="height:0%"></div>
+                        </div>
+                    </div>
+                    <div class="jar-overload" id="jarOverload">
+                        <span style="font-size:14px">⚠️</span>
+                        <div class="overload-text">Overload! <span id="overloadPct">0</span>%</div>
+                        <div class="overload-bar">
+                            <div class="overload-fill" id="overloadFill" style="width:0%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="jar-actions">
+                    <button class="jar-btn" onclick="shakeJar()">🫙 Shake</button>
+                    <button class="jar-btn special" onclick="pullRandom()">🎲 Random</button>
+                    <button class="jar-btn" onclick="openModal()">＋ Add</button>
+                    <button class="jar-btn" onclick="clearJar()">🗑 Clear</button>
+                    <button class="jar-btn" onclick="openShop()">🛒 Shop</button>
+                    <button class="jar-btn" onclick="startRitual()">✦ Ritual</button>
+                </div>
+            </div>
+            <!-- TASK LIST VIEW -->
+            <div id="view-tasks" class="view" style="display:none;width:100%;max-width:500px">
+                <button class="view-back-btn" onclick="setSideNavById('jar')">← Back to Jar</button>
+                <h2 style="font-family:'Playfair Display',serif;font-size:19px;margin-bottom:14px;color:var(--text)">📋
+                    Task List</h2>
+                <div id="fullTaskList"></div>
+            </div>
+            <!-- PROGRESS VIEW -->
+            <div id="view-progress" class="view" style="display:none;width:100%;max-width:500px">
+                <button class="view-back-btn" onclick="setSideNavById('jar')">← Back to Jar</button>
+                <h2 style="font-family:'Playfair Display',serif;font-size:19px;margin-bottom:14px;color:var(--text)">📊
+                    Progress</h2>
+                <div id="progressContent"></div>
+            </div>
+            <!-- COLLECTION VIEW -->
+            <div id="view-collection" class="view" style="display:none;width:100%;max-width:500px">
+                <button class="view-back-btn" onclick="setSideNavById('jar')">← Back to Jar</button>
+                <h2 style="font-family:'Playfair Display',serif;font-size:19px;margin-bottom:14px;color:var(--text)">🎴
+                    Candy Collection</h2>
+                <div id="collectionContent"></div>
+            </div>
+            <!-- FRIENDS VIEW -->
+            <div id="view-friends" class="view" style="display:none;width:100%;max-width:500px">
+                <button class="view-back-btn" onclick="setSideNavById('jar')">← Back to Jar</button>
+                <h2 style="font-family:'Playfair Display',serif;font-size:19px;margin-bottom:14px;color:var(--text)">👥
+                    Friend Jars</h2>
+                <div id="friendsContent"></div>
+            </div>
+            <!-- NOTES VIEW -->
+            <div id="view-notes" class="view" style="display:none;width:100%;max-width:500px">
+                <button class="view-back-btn" onclick="setSideNavById('jar')">← Back to Jar</button>
+                <h2 style="font-family:'Playfair Display',serif;font-size:19px;margin-bottom:14px;color:var(--text)">📝
+                    Notes & Knowledge Log</h2>
+                <div id="notesContent"></div>
+            </div>
+        </main>
+
+        <!-- RIGHT PANEL -->
+        <aside class="right-panel" style="grid-row:2">
+            <div class="tabs">
+                <div class="tab active" onclick="setTab(this,'rt-fortune')">✦ Fortune</div>
+                <div class="tab" onclick="setTab(this,'rt-jar')">📋 Jar</div>
+                <div class="tab" onclick="setTab(this,'rt-timer')">⏱ Timer</div>
+                <div class="tab" onclick="setTab(this,'rt-music')">🎵 Music</div>
+            </div>
+            <div class="tab-panel active" id="rt-fortune">
+                <div class="panel-section">
+                    <div class="panel-title">Daily Fortune Candy</div>
+                    <button class="fortune-candy-btn" id="fortuneBtn" onclick="drawFortune()">🍀 Open Today's
+                        Fortune</button>
+                    <div class="fortune" id="fortuneDisplay" style="display:none">
+                        <span class="fortune-icon" id="fortuneIcon">🌟</span>
+                        <div class="fortune-quote" id="fortuneQuote"></div>
+                        <div class="fortune-author" id="fortuneAuthor"></div>
+                    </div>
+                </div>
+                <div class="panel-section">
+                    <div class="panel-title">Mood Suggestion</div>
+                    <div id="moodSuggestion" style="font-size:11px;color:var(--text2);line-height:1.6">Select a mood to
+                        get candy recommendations...</div>
+                </div>
+                <div class="panel-section">
+                    <div class="panel-title">Sound FX</div>
+                    <div class="sound-row"><span class="sound-name">🍬 Drop</span>
+                        <div class="sound-toggle on" id="snd-drop" onclick="toggleSndToggle(this)"></div>
+                    </div>
+                    <div class="sound-row"><span class="sound-name">✨ Complete</span>
+                        <div class="sound-toggle on" id="snd-complete" onclick="toggleSndToggle(this)"></div>
+                    </div>
+                    <div class="sound-row"><span class="sound-name">⚡ Sugar Rush</span>
+                        <div class="sound-toggle on" id="snd-rush" onclick="toggleSndToggle(this)"></div>
+                    </div>
+                    <div class="sound-row"><span class="sound-name">🔔 Timer Bell</span>
+                        <div class="sound-toggle on" id="snd-bell" onclick="toggleSndToggle(this)"></div>
+                    </div>
+                    <div style="margin-top:8px"><input type="range" min="0" max="100" value="60" id="volumeSlider"
+                            style="width:100%;accent-color:var(--accent)" oninput="setVolume(this.value)">
+                        <div style="text-align:center;font-size:10px;color:var(--text3);margin-top:2px" id="volDisplay">
+                            60%</div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-panel" id="rt-jar">
+                <div class="panel-section" style="flex:1">
+                    <div class="panel-title">In The Jar</div>
+                    <div id="taskList">
+                        <div style="text-align:center;padding:14px;color:var(--text3);font-size:11px">No candies
+                            yet!<br>Add your first task 🍬</div>
+                    </div>
+                </div>
+            </div>
+            <!-- TIMER PANEL -->
+            <div class="tab-panel" id="rt-timer">
+                <div class="panel-section">
+                    <div class="timer-mode-btns">
+                        <button class="tmode-btn active" id="tmode-pomo" onclick="setTimerMode('pomodoro')">🍅
+                            Pomo</button>
+                        <button class="tmode-btn" id="tmode-custom" onclick="setTimerMode('custom')">⏰ Custom</button>
+                        <button class="tmode-btn" id="tmode-stopwatch" onclick="setTimerMode('stopwatch')">⏱
+                            Watch</button>
+                    </div>
+                    <div id="timer-pomo-view">
+                        <div class="pomodoro-sessions" id="pomoDots"></div>
+                        <div class="timer-ring">
+                            <svg width="160" height="160" viewBox="0 0 160 160">
+                                <circle class="ring-bg" cx="80" cy="80" r="68" />
+                                <circle class="ring-prog" id="ringProg" cx="80" cy="80" r="68" stroke-dasharray="427"
+                                    stroke-dashoffset="0" />
+                            </svg>
+                            <div class="ring-center">
+                                <div class="ring-time" id="ringTime">25:00</div>
+                                <div class="ring-label" id="ringLabel">Focus</div>
+                            </div>
+                        </div>
+                        <div class="timer-controls">
+                            <button class="t-btn" onclick="resetTimer()">↺</button>
+                            <button class="t-btn primary" id="timerPlayBtn" onclick="toggleTimer()">▶ Start</button>
+                            <button class="t-btn" onclick="skipPhase()">⏭</button>
+                        </div>
+                        <div style="display:flex;gap:4px;margin-top:8px;justify-content:center">
+                            <button class="t-btn" style="font-size:9px;padding:4px 8px"
+                                onclick="setPomoTime(25,5)">25/5</button>
+                            <button class="t-btn" style="font-size:9px;padding:4px 8px"
+                                onclick="setPomoTime(50,10)">50/10</button>
+                            <button class="t-btn" style="font-size:9px;padding:4px 8px"
+                                onclick="setPomoTime(15,3)">15/3</button>
+                        </div>
+                    </div>
+                    <div id="timer-custom-view" style="display:none">
+                        <div style="text-align:center;margin-bottom:10px">
+                            <div id="customTimerDisplay"
+                                style="font-family:'Space Mono',monospace;font-size:40px;color:var(--text)">00:00</div>
+                        </div>
+                        <div class="timer-custom-row">
+                            <input type="number" id="customHr" value="0" min="0" max="23"><span>h</span>
+                            <input type="number" id="customMin" value="25" min="0" max="59"><span>m</span>
+                            <input type="number" id="customSec" value="0" min="0" max="59"><span>s</span>
+                        </div>
+                        <div class="timer-controls">
+                            <button class="t-btn" onclick="resetCustomTimer()">↺</button>
+                            <button class="t-btn primary" id="customPlayBtn" onclick="toggleCustomTimer()">▶
+                                Start</button>
+                        </div>
+                        <div style="font-size:10px;color:var(--text3);text-align:center;margin-top:8px"
+                            id="customTimerLabel">Set your time above</div>
+                    </div>
+                    <div id="timer-stopwatch-view" style="display:none">
+                        <div style="text-align:center;margin-bottom:10px">
+                            <div id="stopwatchDisplay"
+                                style="font-family:'Space Mono',monospace;font-size:40px;color:var(--text)">00:00.0
+                            </div>
+                        </div>
+                        <div class="timer-controls">
+                            <button class="t-btn" onclick="resetStopwatch()">↺</button>
+                            <button class="t-btn primary" id="swPlayBtn" onclick="toggleStopwatch()">▶ Start</button>
+                            <button class="t-btn" onclick="lapStopwatch()">Lap</button>
+                        </div>
+                        <div class="timer-laps" id="lapList"></div>
+                    </div>
+                </div>
+                <div class="panel-section">
+                    <div class="panel-title">Session Intent</div>
+                    <div id="sessionIntentDisplay"
+                        style="font-size:11px;color:var(--text2);font-style:italic;line-height:1.5">No intent set. Start
+                        a ritual first!</div>
+                    <div class="session-log" id="sessionLog"></div>
+                </div>
+            </div>
+            <!-- MUSIC PANEL -->
+            <div class="tab-panel" id="rt-music">
+                <div class="panel-section">
+                    <div class="panel-title">🎵 Ambient Music Player</div>
+                    <div class="music-player">
+                        <div class="music-track-name" id="musicTrackName">Select a track to play</div>
+                        <div class="music-controls">
+                            <button class="music-btn" onclick="prevTrack()" title="Previous">⏮</button>
+                            <button class="music-btn play" id="musicPlayBtn" onclick="toggleMusic()">▶</button>
+                            <button class="music-btn" onclick="nextTrack()" title="Next">⏭</button>
+                            <button class="music-btn" id="musicLoopBtn" onclick="toggleLoop()" title="Loop"
+                                style="font-size:9px">🔁</button>
+                        </div>
+                        <div class="music-progress" id="musicProgress" onclick="seekMusic(event)">
+                            <div class="music-progress-fill" id="musicProgressFill"></div>
+                        </div>
+                        <div
+                            style="display:flex;justify-content:space-between;font-size:9px;color:var(--text3);margin-bottom:8px">
+                            <span id="musicCurrent">0:00</span><span id="musicTotal">0:00</span>
+                        </div>
+                    </div>
+                    <div style="margin-bottom:6px"><input type="range" min="0" max="100" value="50" id="musicVol"
+                            style="width:100%;accent-color:var(--accent)" oninput="setMusicVol(this.value)">
+                        <div style="text-align:center;font-size:9px;color:var(--text3)">Music Volume: <span
+                                id="musicVolDisplay">50%</span></div>
+                    </div>
+                    <div class="panel-title" style="margin-top:8px">Tracks</div>
+                    <div class="music-track-list" id="musicTrackList"></div>
+                </div>
+                <div class="panel-section">
+                    <div class="panel-title">Ambient Sounds</div>
+                    <div class="sound-row"><span class="sound-name">🌧 Rain</span>
+                        <div class="sound-toggle" id="snd-rain" onclick="toggleSndToggle(this)"></div>
+                    </div>
+                    <div class="sound-row"><span class="sound-name">🌊 Ocean Waves</span>
+                        <div class="sound-toggle" id="snd-ocean" onclick="toggleAmbient('ocean',this)"></div>
+                    </div>
+                    <div class="sound-row"><span class="sound-name">🌲 Forest</span>
+                        <div class="sound-toggle" id="snd-forest" onclick="toggleAmbient('forest',this)"></div>
+                    </div>
+                    <div class="sound-row"><span class="sound-name">🔥 Fireplace</span>
+                        <div class="sound-toggle" id="snd-fire" onclick="toggleAmbient('fire',this)"></div>
+                    </div>
+                    <div class="sound-row"><span class="sound-name">☕ Café</span>
+                        <div class="sound-toggle" id="snd-cafe" onclick="toggleAmbient('cafe',this)"></div>
+                    </div>
+                    <div class="sound-row"><span class="sound-name">⌨️ Keyboard</span>
+                        <div class="sound-toggle" id="snd-keyboard" onclick="toggleAmbient('keyboard',this)"></div>
+                    </div>
+                    <div style="font-size:9px;color:var(--text3);margin-top:6px">Ambient sounds are synthesized</div>
+                </div>
+            </div>
+            <button class="add-btn" onclick="openModal()">＋ Drop a New Candy</button>
+        </aside>
+    </div>
+
+    <script>
+        // ── STATE ──────────────────────────────────────────────────────────────────────
+        let tasks = [], completedCount = 0, streak = 0, rareCount = 0;
+        let rainEnabled = true, soundEnabled = true, masterVol = 0.6;
+        let currentMood = 'tired', currentView = 'jar';
+        let notes = localStorage.getItem('cj_notes') || '';
+        let totalCompleted = parseInt(localStorage.getItem('cj_total') || '0');
+        let collectionUnlocked = JSON.parse(localStorage.getItem('cj_collection') || '[]');
+        let xpCurrent = parseInt(localStorage.getItem('cj_xp') || '0');
+        let coins = parseInt(localStorage.getItem('cj_coins') || '0');
+        let ownedThemes = JSON.parse(localStorage.getItem('cj_owned_themes') || '["default","midnight","forest","sunset","ocean","sakura"]');
+        let knowledgeLog = JSON.parse(localStorage.getItem('cj_klog') || '[]');
+        let sessionIntent = '';
+        let sugarRushCount = 0;
+        let currentTheme = 'default';
+        let zenMode = false;
+        let candyColorIndex = 0;
+        let ownedShopItems = JSON.parse(localStorage.getItem('cj_shop_items') || '[]');
+
+        // ── XP / COINS ─────────────────────────────────────────────────────────────────
+        const XP_PER_SIZE = { tiny: 10, small: 20, medium: 35, large: 60, massive: 100 };
+        const COIN_PER_SIZE = { tiny: 2, small: 3, medium: 5, large: 8, massive: 15 };
+        function getLevel(xp) { return Math.floor(xp / 100) + 1 }
+        function getXPInLevel(xp) { return xp % 100 }
+        function awardXP(task) {
+            const xpGain = XP_PER_SIZE[task.size] || 20;
+            const coinGain = COIN_PER_SIZE[task.size] || 5;
+            xpCurrent += xpGain; coins += coinGain;
+            localStorage.setItem('cj_xp', xpCurrent); localStorage.setItem('cj_coins', coins);
+            showXPPopup(xpGain, coinGain); updateXPBar(); updateCoinDisplay();
+        }
+        function updateXPBar() {
+            const lv = getLevel(xpCurrent); const pct = getXPInLevel(xpCurrent);
+            document.getElementById('xpFill').style.width = pct + '%';
+            document.getElementById('xpLevel').textContent = lv;
+            document.getElementById('xpCurrent').textContent = pct;
+            document.getElementById('xpMax').textContent = 100;
+            document.getElementById('sidebarLevel').textContent = lv;
+            document.getElementById('sidebarXPBar').style.width = pct + '%';
+        }
+        function updateCoinDisplay() {
+            document.getElementById('coinDisplay').textContent = coins;
+            document.getElementById('sidebarCoins').textContent = coins;
+        }
+        function showXPPopup(xp, coin) {
+            const el = document.createElement('div'); el.className = 'xp-popup'; el.textContent = '+' + xp + ' XP';
+            el.style.cssText = `left:${window.innerWidth / 2 - 30}px;top:${window.innerHeight / 2 - 60}px`;
+            document.body.appendChild(el); setTimeout(() => el.remove(), 1200);
+            if (coin) {
+                const cel = document.createElement('div'); cel.className = 'xp-popup'; cel.textContent = '+' + coin + ' 💰';
+                cel.style.cssText = `left:${window.innerWidth / 2 + 20}px;top:${window.innerHeight / 2 - 60}px;color:var(--coin-color)`;
+                document.body.appendChild(cel); setTimeout(() => cel.remove(), 1200);
+            }
+        }
+
+        // ── THEME SYSTEM (FIXED) ───────────────────────────────────────────────────────
+        const FREE_THEMES = ['default', 'midnight', 'forest', 'sunset', 'ocean', 'sakura'];
+        const PREMIUM_THEMES = ['neon', 'latte', 'aurora', 'rose', 'galaxy', 'candy', 'mint', 'ember', 'arctic', 'velvet'];
+        const THEME_PRICES = { neon: 50, latte: 30, aurora: 50, rose: 30, galaxy: 80, candy: 40, mint: 40, ember: 60, arctic: 35, velvet: 70 };
+
+        function isPremiumThemeOwned(t) {
+            return ownedThemes.includes(t) || ownedShopItems.includes('theme_' + t);
+        }
+        function refreshThemeLocks() {
+            PREMIUM_THEMES.forEach(t => {
+                const lockEl = document.getElementById('tlock-' + t);
+                if (lockEl) lockEl.textContent = isPremiumThemeOwned(t) ? '✓' : '🔒';
+            });
+        }
+        function tryPremiumTheme(t, el) {
+            if (isPremiumThemeOwned(t)) { setTheme(t, el); return; }
+            const price = THEME_PRICES[t] || 50;
+            showNotif('🔒', `"${t}" costs ${price}💰 — buy it in the Shop!`, 'var(--accent3)');
+            document.getElementById('themeDropdown').classList.remove('open');
+            setTimeout(() => openShop(), 400);
+        }
+
+        // ── SHOP (UPDATED WITH MORE ITEMS) ────────────────────────────────────────────
+        const SHOP_ITEMS = [
+            // Themes — require real grinding
+            { id: 'theme_neon', type: 'theme', name: 'Neon City', desc: 'Electric cyberpunk vibes', icon: '🌃', price: 200, themeKey: 'neon' },
+            { id: 'theme_latte', type: 'theme', name: 'Latte', desc: 'Warm cozy light mode', icon: '☕', price: 150, themeKey: 'latte' },
+            { id: 'theme_aurora', type: 'theme', name: 'Aurora', desc: 'Northern lights palette', icon: '🌌', price: 250, themeKey: 'aurora' },
+            { id: 'theme_rose', type: 'theme', name: 'Rose Gold', desc: 'Romantic & vibrant', icon: '🌹', price: 175, themeKey: 'rose' },
+            { id: 'theme_galaxy', type: 'theme', name: 'Galaxy', desc: 'Deep space mystery', icon: '🔭', price: 400, themeKey: 'galaxy' },
+            { id: 'theme_candy', type: 'theme', name: 'Candy Pop', desc: 'Sweet & ultra vibrant', icon: '🍭', price: 220, themeKey: 'candy' },
+            { id: 'theme_mint', type: 'theme', name: 'Mint Fresh', desc: 'Cool & clean green', icon: '🌿', price: 180, themeKey: 'mint' },
+            { id: 'theme_ember', type: 'theme', name: 'Ember', desc: 'Volcanic fire tones', icon: '🔥', price: 300, themeKey: 'ember' },
+            { id: 'theme_arctic', type: 'theme', name: 'Arctic', desc: 'Icy crystal blue', icon: '❄️', price: 190, themeKey: 'arctic' },
+            { id: 'theme_velvet', type: 'theme', name: 'Velvet', desc: 'Rich deep purple luxury', icon: '💜', price: 350, themeKey: 'velvet' },
+            // Jars — rare collectibles
+            { id: 'jar_gold', type: 'jar', name: 'Gold Jar', desc: 'Glittering legendary jar', icon: '🏺', price: 500 },
+            { id: 'jar_crystal', type: 'jar', name: 'Crystal Jar', desc: 'Prismatic ultra-clear glass', icon: '💎', price: 750 },
+            { id: 'jar_obsidian', type: 'jar', name: 'Obsidian Jar', desc: 'Rare dark volcanic glass', icon: '🖤', price: 600 },
+            // Boosts
+            { id: 'boost_2x', type: 'boost', name: '2× XP Boost', desc: 'Double XP for next 5 tasks', icon: '⚡', price: 120 },
+            { id: 'boost_coins', type: 'boost', name: 'Coin Magnet', desc: '+15 coins on every complete', icon: '🧲', price: 80 },
+            { id: 'boost_streak', type: 'boost', name: 'Streak Shield', desc: 'Protect your next streak loss', icon: '🛡️', price: 100 },
+            { id: 'boost_rare', type: 'boost', name: 'Rare Finder', desc: 'Next large task = rare candy', icon: '🎰', price: 150 },
+            // Cosmetics
+            { id: 'cos_sparkle', type: 'cosmetic', name: 'Mega Sparkles', desc: 'Triple sparkles on complete', icon: '✨', price: 90 },
+            { id: 'cos_rainbow', type: 'cosmetic', name: 'Rainbow Candy', desc: 'All candies get rainbow glow', icon: '🌈', price: 280 },
+            { id: 'cos_gold_wrap', type: 'cosmetic', name: 'Gold Wrapper', desc: 'Golden shine on all candies', icon: '🥇', price: 350 },
+            { id: 'cos_giant', type: 'cosmetic', name: 'Giant Mode', desc: 'Candies are 1.5× bigger', icon: '🔍', price: 200 },
+            // Music packs
+            { id: 'music_lofi', type: 'music', name: 'Lo-fi Pack', desc: 'Premium lo-fi collection', icon: '🎧', price: 130 },
+            { id: 'music_jazz', type: 'music', name: 'Jazz Pack', desc: 'Smooth late-night jazz', icon: '🎷', price: 130 },
+            { id: 'music_nature', type: 'music', name: 'Nature Pack', desc: 'Immersive soundscapes', icon: '🍃', price: 100 },
+            { id: 'music_epic', type: 'music', name: 'Epic Focus', desc: 'Cinematic concentration', icon: '🎼', price: 160 },
+        ];
+
+        function openShop() { document.getElementById('shopModal').classList.add('open'); renderShop(); }
+        function closeShop() { document.getElementById('shopModal').classList.remove('open') }
+        function renderShop() {
+            document.getElementById('shopCoinDisplay').textContent = coins;
+            const grp = (type) => SHOP_ITEMS.filter(i => i.type === type);
+            const content = document.getElementById('shopContent');
+            content.innerHTML = `
+  <div class="shop-section-title">🎨 Themes (unlock & use instantly)</div>
+  <div class="shop-grid">${grp('theme').map(renderShopItem).join('')}</div>
+  <div class="shop-section-title">🫙 Special Jars</div>
+  <div class="shop-grid">${grp('jar').map(renderShopItem).join('')}</div>
+  <div class="shop-section-title">⚡ Boosts</div>
+  <div class="shop-grid">${grp('boost').map(renderShopItem).join('')}</div>
+  <div class="shop-section-title">✨ Cosmetics</div>
+  <div class="shop-grid">${grp('cosmetic').map(renderShopItem).join('')}</div>
+  <div class="shop-section-title">🎵 Music Packs</div>
+  <div class="shop-grid">${grp('music').map(renderShopItem).join('')}</div>`;
+        }
+        function renderShopItem(item) {
+            const owned = ownedShopItems.includes(item.id) || (item.type === 'theme' && isPremiumThemeOwned(item.themeKey));
+            const canAfford = coins >= item.price;
+            return `<div class="shop-item ${owned ? 'owned' : ''} ${!canAfford && !owned ? 'cant-afford' : ''}">
+    ${owned ? '<div class="shop-owned-badge">✓ Owned</div>' : ''}
+    <span class="shop-icon">${item.icon}</span>
+    <div class="shop-name">${item.name}</div>
+    <div class="shop-desc">${item.desc}</div>
+    <div class="shop-price">💰 ${item.price}</div>
+    <button class="shop-buy-btn" onclick="buyItem('${item.id}')" ${owned ? 'disabled' : ''} ${!canAfford && !owned ? 'disabled' : ''}>
+      ${owned ? 'Owned' : canAfford ? 'Buy' : 'Need ' + item.price + '💰'}
+    </button>
+  </div>`;
+        }
+        function buyItem(id) {
+            const item = SHOP_ITEMS.find(i => i.id === id); if (!item) return;
+            const owned = ownedShopItems.includes(id) || (item.type === 'theme' && isPremiumThemeOwned(item.themeKey));
+            if (owned) return;
+            if (coins < item.price) { showNotif('❌', 'Not enough coins! Earn more by completing tasks', '#f09060'); return; }
+            coins -= item.price; localStorage.setItem('cj_coins', coins); updateCoinDisplay();
+            ownedShopItems.push(id); localStorage.setItem('cj_shop_items', JSON.stringify(ownedShopItems));
+            if (item.type === 'theme' && item.themeKey) {
+                ownedThemes.push(item.themeKey);
+                localStorage.setItem('cj_owned_themes', JSON.stringify(ownedThemes));
+                // Apply the theme immediately on purchase
+                const topt = document.getElementById('topt-' + item.themeKey);
+                if (topt) setTheme(item.themeKey, topt);
+                else { document.body.setAttribute('data-theme', item.themeKey); }
+                refreshThemeLocks();
+            }
+            showNotif(item.icon, item.name + ' unlocked!', 'var(--accent)');
+            renderShop();
+        }
+
+        // ── CANDY CONFIG ───────────────────────────────────────────────────────────────
+        const CANDY_CONFIG = { tiny: { label: 'Jellybean', w: 14, h: 9, scale: 0.7 }, small: { label: 'Drop', w: 18, h: 14, scale: 0.85 }, medium: { label: 'Wrapped', w: 26, h: 18, scale: 1.0 }, large: { label: 'Chocolate', w: 34, h: 13, scale: 1.2 }, massive: { label: 'Lollipop', w: 18, h: 38, scale: 1.5 } };
+        const CANDY_COLORS = [{ h: '#f5a0c8', s: '#c8507a', glow: 'rgba(245,160,200,0.45)' }, { h: '#90b4f5', s: '#3060c0', glow: 'rgba(138,180,245,0.45)' }, { h: '#90d4a0', s: '#308050', glow: 'rgba(144,212,160,0.45)' }, { h: '#c8a0f0', s: '#7040c0', glow: 'rgba(192,160,240,0.45)' }, { h: '#f09080', s: '#c03020', glow: 'rgba(240,144,144,0.45)' }, { h: '#f0c060', s: '#c08020', glow: 'rgba(240,192,96,0.45)' }, { h: '#60d8d0', s: '#2080a0', glow: 'rgba(96,216,208,0.45)' }, { h: '#f080d0', s: '#a02080', glow: 'rgba(240,128,208,0.45)' }, { h: '#80e880', s: '#208040', glow: 'rgba(128,232,128,0.45)' }, { h: '#f0b040', s: '#c07010', glow: 'rgba(240,176,64,0.45)' }];
+        const MOOD_COLORS = { fun: { h: '#f5a0c8', s: '#c8507a', glow: 'rgba(245,160,200,0.45)' }, study: { h: '#90b4f5', s: '#3060c0', glow: 'rgba(138,180,245,0.45)' }, health: { h: '#90d4a0', s: '#308050', glow: 'rgba(144,212,160,0.45)' }, creative: { h: '#c8a0f0', s: '#7040c0', glow: 'rgba(192,160,240,0.45)' }, urgent: { h: '#f09080', s: '#c03020', glow: 'rgba(240,144,144,0.45)' }, painful: { h: '#a090b0', s: '#302040', glow: 'rgba(144,112,144,0.45)' } };
+        const SIZE_EMOJIS = { tiny: '🟡', small: '🔵', medium: '🍬', large: '🍫', massive: '🍭' };
+        const FORTUNES = [{ icon: '🌟', quote: 'Small steps every day lead to extraordinary results.', author: '— CandyJar Wisdom' }, { icon: '🍀', quote: 'The secret of getting ahead is getting started.', author: '— Mark Twain' }, { icon: '🌙', quote: 'Rest is not idleness. A full jar tomorrow starts with rest today.', author: '— CandyJar Wisdom' }, { icon: '✨', quote: 'You are doing better than you think!', author: '— Your Jar' }, { icon: '🎯', quote: 'Focus on one candy at a time. The jar fills itself.', author: '— CandyJar Wisdom' }, { icon: '🌸', quote: 'Difficult tasks are rare candies in disguise.', author: '— Your Jar' }, { icon: '🔥', quote: 'The pain of discipline weighs ounces. The pain of regret weighs tons.', author: '— Jim Rohn' }, { icon: '💎', quote: 'Every completed task is a gem added to your collection.', author: '— Your Jar' }, { icon: '🌈', quote: 'After every storm comes a rainbow. After every task, a candy.', author: '— CandyJar Wisdom' }, { icon: '⚡', quote: 'You have survived 100% of your hardest days.', author: '— Your Jar' }];
+        const MOOD_SUGGESTIONS = { tired: '😴 Try tiny jellybeans — quick wins to wake you up!', focused: '🎯 Perfect time for chocolate bars & lollipops. You\'re in the zone!', lazy: '🦥 Grab a jellybean or drop. Small wins, big mood!', energetic: '⚡ Attack those massive lollipops! You\'ve got the energy!', stressed: '😤 Start with something fun or health-tagged to ease in.' };
+        const COLLECTION_ITEMS = [{ id: 'jellybean', name: 'Jellybean', emoji: '🟡', desc: 'Complete 1 tiny task', req: 1, type: 'tiny' }, { id: 'drop', name: 'Drop', emoji: '💧', desc: 'Complete 3 small tasks', req: 3, type: 'small' }, { id: 'wrapped', name: 'Wrapped Candy', emoji: '🍬', desc: 'Complete 5 medium tasks', req: 5, type: 'medium' }, { id: 'choco', name: 'Chocolate Bar', emoji: '🍫', desc: 'Complete 3 large tasks', req: 3, type: 'large' }, { id: 'lollipop', name: 'Lollipop', emoji: '🍭', desc: 'Complete 1 massive task', req: 1, type: 'massive' }, { id: 'golden', name: 'Golden Candy', emoji: '✨', desc: '10 task streak', req: 10, type: 'streak' }, { id: 'rainbow', name: 'Rainbow Pop', emoji: '🌈', desc: 'Complete all moods', req: 6, type: 'mood' }, { id: 'midnight', name: 'Midnight Drop', emoji: '🌙', desc: 'Complete 20 tasks total', req: 20, type: 'total' }, { id: 'crystal', name: 'Crystal Gem', emoji: '💎', desc: '30 tasks total', req: 30, type: 'total' }, { id: 'star', name: 'Star Candy', emoji: '⭐', desc: '50 tasks total', req: 50, type: 'total' }, { id: 'heart', name: 'Heart Pop', emoji: '❤️', desc: '5 sugar rushes', req: 5, type: 'rush' }, { id: 'galaxy', name: 'Galaxy Jar', emoji: '🌌', desc: '100 tasks total', req: 100, type: 'total' }];
+
+        // ── AUDIO ──────────────────────────────────────────────────────────────────────
+        let audioCtx = null;
+        function getAudioCtx() { if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)(); return audioCtx }
+        function playTone(freq, type, dur, vol) {
+            if (!soundEnabled) return;
+            try {
+                const ctx = getAudioCtx(); const osc = ctx.createOscillator(); const gain = ctx.createGain();
+                osc.connect(gain); gain.connect(ctx.destination); osc.type = type; osc.frequency.setValueAtTime(freq, ctx.currentTime);
+                gain.gain.setValueAtTime(vol * masterVol, ctx.currentTime); gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+                osc.start(ctx.currentTime); osc.stop(ctx.currentTime + dur);
+            } catch (e) { }
+        }
+        function playDrop() { if (!document.getElementById('snd-drop').classList.contains('on')) return; playTone(800, 'sine', 0.08, 0.15); setTimeout(() => playTone(600, 'sine', 0.12, 0.12), 80); setTimeout(() => playTone(400, 'sine', 0.15, 0.1), 160) }
+        function playComplete() { if (!document.getElementById('snd-complete').classList.contains('on')) return;[523, 659, 784, 1047].forEach((f, i) => setTimeout(() => playTone(f, 'triangle', 0.25, 0.18), i * 80)) }
+        function playShake() { for (let i = 0; i < 6; i++)setTimeout(() => playTone(200 + Math.random() * 300, 'sawtooth', 0.05, 0.08), i * 60) }
+        function playRush() { if (!document.getElementById('snd-rush').classList.contains('on')) return;[400, 500, 600, 700, 800, 1000, 1200].forEach((f, i) => setTimeout(() => playTone(f, 'square', 0.15, 0.12), i * 50)) }
+        function playBell() { if (!document.getElementById('snd-bell').classList.contains('on')) return; playTone(528, 'sine', 3, 0.35); setTimeout(() => playTone(660, 'sine', 2.5, 0.2), 100); setTimeout(() => playTone(440, 'sine', 2, 0.15), 200) }
+        function playBreakBell() { playTone(396, 'sine', 3, 0.3); setTimeout(() => playTone(528, 'sine', 2.5, 0.25), 300) }
+        function setVolume(v) { masterVol = v / 100; document.getElementById('volDisplay').textContent = v + '%' }
+        function toggleSndToggle(el) { el.classList.toggle('on') }
+        function toggleSound() { soundEnabled = !soundEnabled; document.getElementById('soundBtn').textContent = soundEnabled ? '🔊' : '🔇'; document.getElementById('soundBtn').classList.toggle('active', soundEnabled) }
+
+        // ── AMBIENT SOUND ENGINE ──────────────────────────────────────────────────────
+        let ambientNodes = {};
+        let musicVol = 0.5;
+        function toggleAmbient(type, el) {
+            el.classList.toggle('on');
+            if (el.classList.contains('on')) startAmbient(type);
+            else stopAmbient(type);
+        }
+        function startAmbient(type) {
+            stopAmbient(type);
+            const ctx = getAudioCtx();
+            const nodes = {};
+            if (type === 'ocean') {
+                const buf = ctx.createBuffer(1, ctx.sampleRate * 4, ctx.sampleRate);
+                const data = buf.getChannelData(0);
+                for (let i = 0; i < data.length; i++)data[i] = Math.random() * 2 - 1;
+                const src = ctx.createBufferSource(); src.buffer = buf; src.loop = true;
+                const filter = ctx.createBiquadFilter(); filter.type = 'lowpass'; filter.frequency.value = 400;
+                const gain = ctx.createGain(); gain.gain.value = 0.08 * musicVol;
+                src.connect(filter); filter.connect(gain); gain.connect(ctx.destination); src.start();
+                nodes = { src, gain };
+            } else if (type === 'forest') {
+                // chirp intervals
+                const gain = ctx.createGain(); gain.gain.value = 0.04 * musicVol; gain.connect(ctx.destination);
+                const iv = setInterval(() => {
+                    if (!ambientNodes[type]) return clearInterval(iv);
+                    const f = 800 + Math.random() * 400; playToneToGain(f, 'sine', 0.08, 0.06, gain);
+                    setTimeout(() => playToneToGain(f * 1.2, 'sine', 0.06, 0.04, gain), 80);
+                }, 500 + Math.random() * 1000);
+                nodes = { gain, iv };
+            } else if (type === 'fire') {
+                const buf = ctx.createBuffer(1, ctx.sampleRate * 2, ctx.sampleRate);
+                const data = buf.getChannelData(0); for (let i = 0; i < data.length; i++)data[i] = (Math.random() * 2 - 1) * 0.5;
+                const src = ctx.createBufferSource(); src.buffer = buf; src.loop = true;
+                const filter = ctx.createBiquadFilter(); filter.type = 'bandpass'; filter.frequency.value = 200; filter.Q.value = 0.5;
+                const gain = ctx.createGain(); gain.gain.value = 0.06 * musicVol;
+                src.connect(filter); filter.connect(gain); gain.connect(ctx.destination); src.start();
+                nodes = { src, gain };
+            } else if (type === 'cafe') {
+                const gain = ctx.createGain(); gain.gain.value = 0.03 * musicVol; gain.connect(ctx.destination);
+                const iv = setInterval(() => {
+                    if (!ambientNodes[type]) return clearInterval(iv);
+                    const f = 300 + Math.random() * 200; playToneToGain(f, 'sine', 0.1 + Math.random() * 0.2, 0.02, gain);
+                }, 200 + Math.random() * 600);
+                nodes = { gain, iv };
+            } else if (type === 'keyboard') {
+                const gain = ctx.createGain(); gain.gain.value = 0.04 * musicVol; gain.connect(ctx.destination);
+                const iv = setInterval(() => {
+                    if (!ambientNodes[type]) return clearInterval(iv);
+                    const f = 2000 + Math.random() * 500; playToneToGain(f, 'square', 0.02, 0.05, gain);
+                }, 80 + Math.random() * 150);
+                nodes = { gain, iv };
+            }
+            ambientNodes[type] = nodes;
+        }
+        function playToneToGain(freq, type, dur, vol, destGain) {
+            try {
+                const ctx = getAudioCtx(); const osc = ctx.createOscillator(); const g = ctx.createGain();
+                osc.connect(g); g.connect(destGain); osc.type = type; osc.frequency.value = freq;
+                g.gain.setValueAtTime(vol, ctx.currentTime); g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + dur);
+                osc.start(ctx.currentTime); osc.stop(ctx.currentTime + dur);
+            } catch (e) { }
+        }
+        function stopAmbient(type) {
+            const n = ambientNodes[type]; if (!n) return;
+            try { if (n.src) n.src.stop(); if (n.gain) n.gain.disconnect(); if (n.iv) clearInterval(n.iv); } catch (e) { }
+            delete ambientNodes[type];
+        }
+        function setMusicVol(v) { musicVol = v / 100; document.getElementById('musicVolDisplay').textContent = v + '%' }
+
+        // ── MUSIC PLAYER ───────────────────────────────────────────────────────────────
+        const TRACKS = [
+            { name: 'Cozy Rain ☔', desc: 'Soft lo-fi with rain', genre: 'lofi', notes: [261, 294, 330, 349, 392], tempo: 900, waveform: 'triangle', chord: [261, 329, 392] },
+            { name: 'Study Breeze 📚', desc: 'Calm focus beats', genre: 'lofi', notes: [220, 247, 261, 294, 330], tempo: 800, waveform: 'sine', chord: [220, 277, 330] },
+            { name: 'Night Garden 🌙', desc: 'Dreamy evening', genre: 'ambient', notes: [196, 220, 247, 261, 294], tempo: 1200, waveform: 'sine', chord: [196, 247, 294] },
+            { name: 'Coffee Shop ☕', desc: 'Warm café vibes', genre: 'jazz', notes: [293, 329, 370, 415, 440], tempo: 700, waveform: 'triangle', chord: [293, 370, 440] },
+            { name: 'Focus Flow 🎯', desc: 'Pure concentration', genre: 'electronic', notes: [349, 392, 440, 494, 523], tempo: 600, waveform: 'sawtooth', chord: [349, 440, 523] },
+            { name: 'Pixel Dreams 🕹️', desc: 'Chiptune lo-fi', genre: 'chiptune', notes: [523, 587, 659, 698, 784], tempo: 500, waveform: 'square', chord: [523, 659, 784] },
+            { name: 'Ocean Drift 🌊', desc: 'Floating waves', genre: 'ambient', notes: [174, 196, 220, 247, 261], tempo: 1400, waveform: 'sine', chord: [174, 220, 261] },
+            { name: 'Autumn Walk 🍂', desc: 'Mellow autumn feels', genre: 'acoustic', notes: [261, 294, 330, 370, 415], tempo: 1000, waveform: 'triangle', chord: [261, 330, 415] },
+            { name: 'Midnight Jazz 🎷', desc: 'Late night sax', genre: 'jazz', notes: [233, 261, 311, 349, 392], tempo: 750, waveform: 'triangle', chord: [233, 311, 392] },
+            { name: 'Galaxy Haze 🌌', desc: 'Deep space ambient', genre: 'ambient', notes: [130, 146, 164, 174, 196], tempo: 1600, waveform: 'sine', chord: [130, 164, 196] },
+            { name: 'Cherry Blossom 🌸', desc: 'Soft Japanese vibes', genre: 'lofi', notes: [293, 330, 392, 440, 494], tempo: 950, waveform: 'sine', chord: [293, 392, 494] },
+            { name: 'Electric Dawn ⚡', desc: 'Energetic morning', genre: 'electronic', notes: [392, 440, 494, 523, 587], tempo: 550, waveform: 'sawtooth', chord: [392, 494, 587] },
+        ];
+        let musicPlaying = false, musicLoop = true, currentTrackIdx = 0, musicInterval = null, noteIdx = 0, musicBeat = 0, musicStartTime = 0;
+
+        function renderTrackList() {
+            const el = document.getElementById('musicTrackList');
+            el.innerHTML = TRACKS.map((t, i) => `
+  <div class="music-track-item ${i === currentTrackIdx ? 'active' : ''}" onclick="selectTrack(${i})">
+    <span class="music-track-icon">${['🎵', '🎶', '🎹', '🎸', '🎷', '🎺', '🎻', '🥁'][i % 8]}</span>
+    <div style="flex:1;min-width:0">
+      <div style="font-size:11px;color:${i === currentTrackIdx ? 'var(--accent)' : 'var(--text)'};white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${t.name}</div>
+      <div style="font-size:9px;color:var(--text3)">${t.genre} · ${t.desc}</div>
+    </div>
+    ${i === currentTrackIdx && musicPlaying ? '<span style="font-size:9px;color:var(--accent)">▶</span>' : ''}
+  </div>`).join('');
+        }
+        function selectTrack(i) {
+            const wasPlaying = musicPlaying;
+            stopMusic();
+            currentTrackIdx = i;
+            document.getElementById('musicTrackName').textContent = TRACKS[i].name;
+            renderTrackList();
+            if (wasPlaying) startMusic();
+        }
+        function toggleMusic() {
+            if (musicPlaying) stopMusic();
+            else startMusic();
+        }
+        function startMusic() {
+            stopMusic();
+            musicPlaying = true;
+            document.getElementById('musicPlayBtn').textContent = '⏸';
+            const track = TRACKS[currentTrackIdx];
+            noteIdx = 0; musicBeat = 0; musicStartTime = Date.now();
+            document.getElementById('musicTrackName').textContent = track.name;
+            function playNextNote() {
+                if (!musicPlaying) return;
+                const ctx = getAudioCtx();
+                const n = track.notes[noteIdx % track.notes.length];
+                // Melody note
+                const osc = ctx.createOscillator(); const g = ctx.createGain();
+                osc.connect(g); g.connect(ctx.destination); osc.type = track.waveform; osc.frequency.value = n;
+                const vol = musicVol * 0.08;
+                g.gain.setValueAtTime(vol, ctx.currentTime); g.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + track.tempo / 900);
+                osc.start(ctx.currentTime); osc.stop(ctx.currentTime + track.tempo / 900);
+                // Occasional chord
+                if (noteIdx % 4 === 0 && track.chord) {
+                    track.chord.forEach((cf, ci) => {
+                        const co = ctx.createOscillator(); const cg = ctx.createGain();
+                        co.connect(cg); cg.connect(ctx.destination); co.type = 'sine'; co.frequency.value = cf / 2;
+                        cg.gain.setValueAtTime(musicVol * 0.03, ctx.currentTime); cg.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + track.tempo / 400);
+                        co.start(ctx.currentTime); co.stop(ctx.currentTime + track.tempo / 400);
+                    });
+                }
+                noteIdx++;
+                // Update progress
+                const elapsed = (Date.now() - musicStartTime) / 1000;
+                const totalDur = track.notes.length * (track.tempo / 1000) * 4;
+                const pct = Math.min(100, (elapsed / totalDur) * 100);
+                document.getElementById('musicProgressFill').style.width = pct + '%';
+                const ms = Math.floor(elapsed % 60), mm = Math.floor(elapsed / 60);
+                document.getElementById('musicCurrent').textContent = mm + ':' + (ms < 10 ? '0' : '') + ms;
+                const td = track.notes.length * (track.tempo / 1000) * 4;
+                const tm = Math.floor(td / 60), ts = Math.floor(td % 60);
+                document.getElementById('musicTotal').textContent = tm + ':' + (ts < 10 ? '0' : '') + ts;
+                // Loop or next
+                if (noteIdx >= track.notes.length * 8) {
+                    if (musicLoop) { noteIdx = 0; musicStartTime = Date.now(); }
+                    else if (currentTrackIdx < TRACKS.length - 1) { selectTrack(currentTrackIdx + 1); return; }
+                    else { stopMusic(); return; }
+                }
+                musicInterval = setTimeout(playNextNote, track.tempo);
+            }
+            playNextNote();
+            renderTrackList();
+        }
+        function stopMusic() {
+            musicPlaying = false;
+            if (musicInterval) { clearTimeout(musicInterval); musicInterval = null; }
+            document.getElementById('musicPlayBtn').textContent = '▶';
+            document.getElementById('musicProgressFill').style.width = '0%';
+            renderTrackList();
+        }
+        function prevTrack() { selectTrack((currentTrackIdx - 1 + TRACKS.length) % TRACKS.length) }
+        function nextTrack() { selectTrack((currentTrackIdx + 1) % TRACKS.length) }
+        function toggleLoop() { musicLoop = !musicLoop; document.getElementById('musicLoopBtn').style.color = musicLoop ? 'var(--accent)' : 'var(--text3)' }
+        function seekMusic(e) {
+            const bar = e.currentTarget; const pct = e.offsetX / bar.offsetWidth;
+            musicStartTime = Date.now() - pct * TRACKS[currentTrackIdx].notes.length * (TRACKS[currentTrackIdx].tempo / 1000) * 4 * 1000;
+            noteIdx = Math.floor(pct * TRACKS[currentTrackIdx].notes.length * 8);
+        }
+
+        // ── CANVASES ───────────────────────────────────────────────────────────────────
+        const dustCanvas = document.getElementById('dustCanvas'), dustCtx = dustCanvas.getContext('2d');
+        const rainCanvas = document.getElementById('rainCanvas'), rainCtx = rainCanvas.getContext('2d');
+        function resizeCvs() { dustCanvas.width = rainCanvas.width = window.innerWidth; dustCanvas.height = rainCanvas.height = window.innerHeight }
+        resizeCvs(); window.addEventListener('resize', resizeCvs);
+        const dustP = Array.from({ length: 60 }, () => ({ x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight, r: Math.random() * 1.8 + 0.3, vx: (Math.random() - 0.5) * 0.18, vy: -(Math.random() * 0.12 + 0.03), op: Math.random() * 0.45 + 0.08 }));
+        function animateDust() { dustCtx.clearRect(0, 0, dustCanvas.width, dustCanvas.height); dustP.forEach(p => { p.x += p.vx; p.y += p.vy; if (p.y < 0) p.y = dustCanvas.height; if (p.x < 0) p.x = dustCanvas.width; if (p.x > dustCanvas.width) p.x = 0; dustCtx.beginPath(); dustCtx.arc(p.x, p.y, p.r, 0, Math.PI * 2); dustCtx.fillStyle = `rgba(200,180,240,${p.op})`; dustCtx.fill(); }); requestAnimationFrame(animateDust); } animateDust();
+        const rainD = Array.from({ length: 130 }, () => ({ x: Math.random() * window.innerWidth, y: Math.random() * window.innerHeight, l: Math.random() * 14 + 7, v: Math.random() * 3.5 + 5.5, op: Math.random() * 0.28 + 0.08 }));
+        function animateRain() { if (!rainEnabled) { rainCtx.clearRect(0, 0, rainCanvas.width, rainCanvas.height); requestAnimationFrame(animateRain); return } rainCtx.clearRect(0, 0, rainCanvas.width, rainCanvas.height); rainD.forEach(d => { d.y += d.v; d.x += d.v * 0.14; if (d.y > rainCanvas.height) { d.y = -d.l; d.x = Math.random() * rainCanvas.width } rainCtx.beginPath(); rainCtx.moveTo(d.x, d.y); rainCtx.lineTo(d.x + d.l * 0.12, d.y + d.l); rainCtx.strokeStyle = `rgba(180,200,255,${d.op})`; rainCtx.lineWidth = 0.7; rainCtx.stroke(); }); requestAnimationFrame(animateRain); } animateRain();
+
+        // ── DATE / CLOCK ───────────────────────────────────────────────────────────────
+        function updateClock() { const now = new Date(); document.getElementById('clockDisplay').textContent = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }); const hr = now.getHours(); let g = 'cozy evening energy'; if (hr < 6) g = 'late night grind 🌙'; else if (hr < 12) g = 'good morning ☀️'; else if (hr < 17) g = 'afternoon focus 🎯'; else if (hr < 20) g = 'evening wind-down 🌅'; document.getElementById('clockGreeting').textContent = g; }
+        function updateDateDisplay() { const now = new Date(); const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']; const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']; document.getElementById('dateDisplay').textContent = `${months[now.getMonth()]} ${now.getDate()}, ${now.getFullYear()}`; document.getElementById('dayBadge').textContent = days[now.getDay()]; }
+        setInterval(updateClock, 1000); updateClock(); updateDateDisplay();
+
+        // ── CANDY DRAWING ──────────────────────────────────────────────────────────────
+        function drawCandy(task) {
+            const cfg = CANDY_CONFIG[task.size]; const col = task.candyColor || MOOD_COLORS[task.mood]; const sc = cfg.scale;
+            const cvs = document.createElement('canvas'); const dpr = window.devicePixelRatio || 1;
+            const bw = Math.round((cfg.w + 18) * sc), bh = Math.round((cfg.h + 18) * sc);
+            cvs.width = bw * dpr; cvs.height = bh * dpr; cvs.style.width = bw + 'px'; cvs.style.height = bh + 'px';
+            const ctx = cvs.getContext('2d'); ctx.scale(dpr * sc, dpr * sc);
+            const bwS = (cfg.w + 18), bhS = (cfg.h + 18); const cx = bwS / 2, cy = bhS / 2;
+            if (task.size === 'tiny' || task.size === 'small') {
+                ctx.save(); ctx.translate(cx, cy);
+                const g = ctx.createLinearGradient(-cfg.w / 2, -cfg.h / 2, cfg.w / 2, cfg.h / 2);
+                g.addColorStop(0, 'rgba(255,255,255,0.6)'); g.addColorStop(0.4, col.h); g.addColorStop(1, col.s);
+                ctx.beginPath(); ctx.ellipse(0, 0, cfg.w / 2, cfg.h / 2, 0, 0, Math.PI * 2); ctx.fillStyle = g; ctx.fill();
+                ctx.strokeStyle = 'rgba(0,0,0,0.12)'; ctx.lineWidth = 0.6; ctx.stroke();
+                ctx.beginPath(); ctx.ellipse(-cfg.w * 0.14, -cfg.h * 0.18, cfg.w * 0.22, cfg.h * 0.16, Math.PI * 0.3, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255,255,255,0.5)'; ctx.fill();
+                ctx.restore();
+            } else if (task.size === 'medium') {
+                const r = cfg.w / 2, rh = cfg.h / 2;
+                const g = ctx.createLinearGradient(cx - r, cy, cx + r, cy); g.addColorStop(0, col.s); g.addColorStop(0.5, col.h); g.addColorStop(1, col.s);
+                ctx.beginPath(); ctx.ellipse(cx, cy, r, rh, 0, 0, Math.PI * 2); ctx.fillStyle = g; ctx.fill();
+                [0, 1].forEach(i => { const sx = i === 0 ? cx - r - 5 : cx + r + 5; const ex = i === 0 ? cx - r : cx + r; ctx.beginPath(); ctx.moveTo(ex, cy - rh + 2); ctx.bezierCurveTo(sx, cy - rh, sx, cy + rh, ex, cy + rh - 2); ctx.strokeStyle = col.s; ctx.lineWidth = 5.5; ctx.stroke(); ctx.strokeStyle = 'rgba(255,255,255,0.25)'; ctx.lineWidth = 2.2; ctx.stroke(); });
+                ctx.beginPath(); ctx.ellipse(cx - r * 0.22, cy - rh * 0.28, r * 0.28, rh * 0.2, 0, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255,255,255,0.45)'; ctx.fill();
+                if (task.rare) { ctx.fillStyle = '#ffd700'; ctx.font = 'bold 8px sans-serif'; ctx.textAlign = 'center'; ctx.fillText('✦', cx, cy + 3) }
+            } else if (task.size === 'large') {
+                const g = ctx.createLinearGradient(cx - cfg.w / 2, cy - cfg.h / 2, cx, cy + cfg.h / 2);
+                g.addColorStop(0, 'rgba(255,255,255,0.25)'); g.addColorStop(0.3, col.h); g.addColorStop(1, col.s);
+                ctx.beginPath(); ctx.roundRect(cx - cfg.w / 2, cy - cfg.h / 2, cfg.w, cfg.h, 3.5); ctx.fillStyle = g; ctx.fill();
+                ctx.strokeStyle = 'rgba(0,0,0,0.18)'; ctx.lineWidth = 0.6; ctx.stroke();
+                const seg = cfg.w / 3; for (let i = 1; i < 3; i++) { ctx.beginPath(); ctx.moveTo(cx - cfg.w / 2 + seg * i, cy - cfg.h / 2 + 2.5); ctx.lineTo(cx - cfg.w / 2 + seg * i, cy + cfg.h / 2 - 2.5); ctx.strokeStyle = 'rgba(0,0,0,0.16)'; ctx.lineWidth = 0.9; ctx.stroke(); }
+                ctx.beginPath(); ctx.roundRect(cx - cfg.w / 2 + 3, cy - cfg.h / 2 + 2, cfg.w * 0.28, cfg.h * 0.32, 2); ctx.fillStyle = 'rgba(255,255,255,0.3)'; ctx.fill();
+            } else {
+                const lw = 13; ctx.beginPath(); ctx.moveTo(cx + 1, cy + lw + 1); ctx.lineTo(cx + 2.5, cy + cfg.h / 2 - 2); ctx.strokeStyle = 'rgba(210,200,200,0.6)'; ctx.lineWidth = 2.8; ctx.stroke();
+                const pg = ctx.createRadialGradient(cx - 3.5, cy - 3.5, 1, cx, cy, lw); pg.addColorStop(0, 'rgba(255,255,255,0.8)'); pg.addColorStop(0.28, col.h); pg.addColorStop(0.7, col.h + 'cc'); pg.addColorStop(1, col.s);
+                ctx.beginPath(); ctx.arc(cx, cy, lw, 0, Math.PI * 2); ctx.fillStyle = pg; ctx.fill(); ctx.strokeStyle = 'rgba(0,0,0,0.12)'; ctx.lineWidth = 0.5; ctx.stroke();
+                ctx.beginPath(); for (let a = 0; a < Math.PI * 2; a += 0.08) { const rr = a / (Math.PI * 2) * lw * 0.78; const xx = cx + Math.cos(a) * rr, yy = cy + Math.sin(a) * rr; if (a < 0.09) ctx.moveTo(xx, yy); else ctx.lineTo(xx, yy); } ctx.strokeStyle = 'rgba(255,255,255,0.3)'; ctx.lineWidth = 1.8; ctx.stroke();
+                ctx.beginPath(); ctx.arc(cx - 4.5, cy - 4.5, 3.5, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255,255,255,0.45)'; ctx.fill();
+            }
+            return cvs;
+        }
+
+        // ── JAR FILL / OVERLOAD ────────────────────────────────────────────────────────
+        const JAR_MAX_COMFORTABLE = 15, JAR_MAX = 25;
+        function updateJarFill() {
+            const pct = Math.min(100, Math.round(tasks.length / JAR_MAX * 100));
+            document.getElementById('jarFillLevel').style.height = pct + '%';
+            const overload = document.getElementById('jarOverload'); const warning = document.getElementById('overloadWarning');
+            if (tasks.length >= JAR_MAX_COMFORTABLE) {
+                const op = Math.min(100, Math.round((tasks.length - JAR_MAX_COMFORTABLE) / (JAR_MAX - JAR_MAX_COMFORTABLE) * 100));
+                overload.classList.add('visible'); warning.classList.add('visible');
+                document.getElementById('overloadPct').textContent = op; document.getElementById('overloadFill').style.width = op + '%';
+                if (tasks.length >= JAR_MAX) document.getElementById('jarContainer').classList.add('jar-leaking');
+                else document.getElementById('jarContainer').classList.remove('jar-leaking');
+            } else { overload.classList.remove('visible'); warning.classList.remove('visible'); document.getElementById('jarContainer').classList.remove('jar-leaking'); }
+            if (tasks.length > 12) document.getElementById('jarFog').setAttribute('fill', 'rgba(200,180,240,0.06)');
+            else document.getElementById('jarFog').setAttribute('fill', 'rgba(200,180,240,0)');
+        }
+
+        // ── POSITION ───────────────────────────────────────────────────────────────────
+        function positionCandy(task) {
+            const jc = document.getElementById('candyCanvas'); const jw = jc.offsetWidth, jh = jc.offsetHeight;
+            const cfg = CANDY_CONFIG[task.size]; const bw = Math.round((cfg.w + 18) * cfg.scale), bh = Math.round((cfg.h + 18) * cfg.scale);
+            const idx = tasks.indexOf(task); const col2 = idx % 4, row = Math.floor(idx / 4); const stagger = (col2 % 2) * 5;
+            let x = 8 + col2 * (jw / 4.3) + (Math.random() * 16 - 8); let y = jh - bh - 8 - row * 18 + stagger;
+            x = Math.max(2, Math.min(x, jw - bw - 4)); y = Math.max(2, Math.min(y, jh - bh - 2)); return { x, y, w: bw, h: bh };
+        }
+
+        // ── ADD CANDY ──────────────────────────────────────────────────────────────────
+        function addCandyToJar(task) {
+            const jc = document.getElementById('candyCanvas'); const pos = positionCandy(task); const col = task.candyColor || MOOD_COLORS[task.mood];
+            const wrapper = document.createElement('div'); wrapper.className = 'candy-item dropping'; wrapper.dataset.id = task.id;
+            const rot = (Math.random() - 0.5) * 28; const dur = 0.55 + Math.random() * 0.4;
+            wrapper.style.cssText = `left:${pos.x}px;top:${pos.y}px;--land-y:0px;--land-r:${rot}deg;--start-r:${rot * 2}deg;--drop-dur:${dur}s;--base-t:rotate(${rot}deg);transform:rotate(${rot}deg);z-index:${tasks.indexOf(task) + 1};filter:drop-shadow(0 3px 8px ${col.glow});`;
+            wrapper.appendChild(drawCandy(task)); jc.appendChild(wrapper);
+            wrapper.addEventListener('mouseenter', e => showTooltip(task, e)); wrapper.addEventListener('mouseleave', hideTooltip); wrapper.addEventListener('mousemove', e => moveTooltip(e)); wrapper.addEventListener('dblclick', () => completeTask(task.id));
+            setTimeout(() => { wrapper.classList.remove('dropping'); wrapper.classList.add('bouncing') }, dur * 1000 + 100);
+            playDrop(); updateStats(); renderTaskList(); renderFullTaskList(); updateJarFill();
+        }
+
+        // ── TOOLTIP ────────────────────────────────────────────────────────────────────
+        function showTooltip(task, e) { const tt = document.getElementById('candyTooltip'); const cfg = CANDY_CONFIG[task.size]; document.getElementById('tt-name').textContent = task.name; document.getElementById('tt-type').textContent = `${SIZE_EMOJIS[task.size]} ${cfg.label} · ${task.mood}`; document.getElementById('tt-time').textContent = task.time; document.getElementById('tt-due').textContent = task.deadline || 'No deadline'; document.getElementById('tt-mood').textContent = task.mood; tt.style.left = (e.clientX + 15) + 'px'; tt.style.top = (e.clientY - 10) + 'px'; tt.classList.add('visible'); }
+        function moveTooltip(e) { const tt = document.getElementById('candyTooltip'); tt.style.left = (e.clientX + 15) + 'px'; tt.style.top = (e.clientY - 10) + 'px'; }
+        function hideTooltip() { document.getElementById('candyTooltip').classList.remove('visible') }
+
+        // ── COMPLETE ───────────────────────────────────────────────────────────────────
+        function completeTask(id) {
+            const task = tasks.find(t => t.id === id); if (!task) return; hideTooltip();
+            const el = document.querySelector(`.candy-item[data-id="${id}"]`);
+            if (el) { el.classList.remove('bouncing'); el.classList.add('completing'); spawnSparkles(el); setTimeout(() => el.remove(), 700) }
+            tasks = tasks.filter(t => t.id !== id); completedCount++; streak++; totalCompleted++;
+            localStorage.setItem('cj_total', totalCompleted); awardXP(task);
+            if (task.size === 'massive' || task.size === 'large') { rareCount++; setTimeout(showRareDrop, 900) }
+            if (streak >= 3) { sugarRushCount++; showSugarRush(streak); playRush(); } else { playComplete(); }
+            checkAchievements(); updateStats(); renderTaskList(); renderFullTaskList(); renderProgress(); updateJarFill();
+            clearTimeout(window._streakTimer); window._streakTimer = setTimeout(() => { streak = 0; updateStats() }, 100000);
+        }
+        function clearJar() { if (!tasks.length) return; if (!confirm('Clear all candies from the jar?')) return; tasks = []; document.getElementById('candyCanvas').innerHTML = ''; updateStats(); renderTaskList(); renderFullTaskList(); updateJarFill(); showNotif('🗑', 'Jar cleared!', 'var(--text3)'); }
+
+        // ── SPARKLES ───────────────────────────────────────────────────────────────────
+        function spawnSparkles(el) {
+            const rect = el.getBoundingClientRect(); const em = ['✦', '⭐', '💫', '✨', '🌟', '💥', '🍬', '🎉'];
+            for (let i = 0; i < 10; i++) { const sp = document.createElement('div'); sp.className = 'sparkle'; const dx = (Math.random() - 0.5) * 120, dy = -(Math.random() * 90 + 20); sp.style.cssText = `left:${rect.left + rect.width / 2}px;top:${rect.top + rect.height / 2}px;--dx:${dx}px;--dy:${dy}px;--dur:${0.55 + Math.random() * 0.7}s;animation-delay:${Math.random() * 0.18}s;`; sp.textContent = em[Math.floor(Math.random() * em.length)]; document.body.appendChild(sp); setTimeout(() => sp.remove(), 1600); }
+        }
+        function showSugarRush(n) { const el = document.getElementById('sugarRush'); document.getElementById('rushText').textContent = `🍬 SUGAR RUSH ×${n}!`; el.classList.remove('active'); void el.offsetWidth; el.classList.add('active'); document.getElementById('streakBanner').classList.add('visible'); document.getElementById('streakCount').textContent = n; setTimeout(() => { el.classList.remove('active'); if (streak < 3) document.getElementById('streakBanner').classList.remove('visible'); }, 3200); }
+        function showRareDrop() { showNotif('✦', 'Rare Candy! Golden wrapper unlocked!', '#ffd700') }
+        function showNotif(icon, text, color) { const n = document.createElement('div'); n.style.cssText = `position:fixed;top:72px;right:20px;z-index:450;background:var(--surface);border:1px solid var(--border2);border-radius:12px;padding:10px 16px;color:${color};font-size:12px;box-shadow:0 4px 20px rgba(0,0,0,0.3);animation:notif-sl 0.3s ease-out;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:8px;max-width:240px;`; n.innerHTML = `<span style="font-size:18px">${icon}</span><span>${text}</span>`; document.body.appendChild(n); setTimeout(() => n.remove(), 3200); }
+        const ns = document.createElement('style'); ns.textContent = '@keyframes notif-sl{from{transform:translateX(50px);opacity:0}to{transform:translateX(0);opacity:1}}'; document.head.appendChild(ns);
+
+        // ── SHAKE / RANDOM ─────────────────────────────────────────────────────────────
+        function shakeJar() { document.getElementById('jarContainer').classList.add('jar-shaking'); playShake(); document.querySelectorAll('.candy-item').forEach(el => { el.classList.remove('bouncing'); el.style.transition = 'transform 0.12s'; const r = (Math.random() - 0.5) * 22, tx = (Math.random() - 0.5) * 12, ty = (Math.random() - 0.5) * 7; el.style.transform = `rotate(${r}deg) translate(${tx}px,${ty}px)`; setTimeout(() => { el.style.transform = ''; el.style.transition = 'transform 0.35s ease-out'; setTimeout(() => el.classList.add('bouncing'), 400) }, 380); }); setTimeout(() => document.getElementById('jarContainer').classList.remove('jar-shaking'), 900); }
+        function pullRandom() { if (!tasks.length) return; const task = tasks[Math.floor(Math.random() * tasks.length)]; const el = document.querySelector(`.candy-item[data-id="${task.id}"]`); if (el) { el.classList.remove('bouncing'); el.style.transition = 'transform 0.5s cubic-bezier(0.34,1.56,0.64,1),filter 0.3s'; el.style.transform = 'scale(2.2) rotate(12deg)'; el.style.zIndex = 80; el.style.filter = `drop-shadow(0 0 20px ${MOOD_COLORS[task.mood].glow}) drop-shadow(0 0 40px ${MOOD_COLORS[task.mood].glow})`; showTooltip(task, { clientX: window.innerWidth / 2, clientY: window.innerHeight / 2 }); setTimeout(() => { el.style.transform = ''; el.style.zIndex = ''; el.style.filter = ''; el.classList.add('bouncing'); hideTooltip(); }, 2600); } }
+
+        // ── MODAL ──────────────────────────────────────────────────────────────────────
+        function openModal() { document.getElementById('modal').classList.add('open'); document.getElementById('taskName').focus(); updatePreview(); }
+        function closeModal() { document.getElementById('modal').classList.remove('open') }
+        document.getElementById('modal').addEventListener('click', e => { if (e.target === document.getElementById('modal')) closeModal() });
+        document.getElementById('shopModal').addEventListener('click', e => { if (e.target === document.getElementById('shopModal')) closeShop() });
+        function updatePreview() { const size = document.getElementById('taskSize').value; const mood = document.getElementById('taskMood').value; const col = MOOD_COLORS[mood]; document.getElementById('previewCandy').textContent = SIZE_EMOJIS[size]; document.getElementById('previewCandy').style.color = col.h; document.getElementById('previewText').textContent = `${CANDY_CONFIG[size].label} · ${mood}`; document.getElementById('previewText').style.color = col.h; }
+        function addTask() {
+            const name = document.getElementById('taskName').value.trim(); if (!name) return;
+            const colorIdx = candyColorIndex++; const col = CANDY_COLORS[colorIdx % CANDY_COLORS.length];
+            const task = { id: Date.now().toString(36) + Math.random().toString(36).slice(2), name, size: document.getElementById('taskSize').value, mood: document.getElementById('taskMood').value, time: document.getElementById('taskTime').value, deadline: document.getElementById('taskDeadline').value, notes: document.getElementById('taskNotes').value, rare: document.getElementById('taskSize').value === 'massive' && Math.random() < 0.3, added: Date.now(), candyColor: col, colorIdx: colorIdx };
+            tasks.push(task); closeModal(); document.getElementById('taskName').value = ''; document.getElementById('taskNotes').value = ''; document.getElementById('taskDeadline').value = ''; addCandyToJar(task);
+        }
+        document.getElementById('taskName').addEventListener('keydown', e => { if (e.key === 'Enter') addTask() });
+
+        // ── STATS ──────────────────────────────────────────────────────────────────────
+        function updateStats() { document.getElementById('statTotal').textContent = tasks.length; document.getElementById('statDone').textContent = completedCount; document.getElementById('statStreak').textContent = streak; document.getElementById('statRare').textContent = rareCount; document.getElementById('taskCountBadge').textContent = tasks.length; if (streak < 3) document.getElementById('streakBanner').classList.remove('visible'); }
+
+        // ── TASK LISTS ─────────────────────────────────────────────────────────────────
+        function renderTaskList() { const list = document.getElementById('taskList'); if (!tasks.length) { list.innerHTML = '<div style="text-align:center;padding:14px;color:var(--text3);font-size:11px">No candies yet!<br>Add your first task 🍬</div>'; return } list.innerHTML = tasks.map(t => { const col = t.candyColor || MOOD_COLORS[t.mood]; return `<div class="task-mini" onclick="highlightCandy('${t.id}')"><span class="task-candy-icon" style="color:${col.h}">${SIZE_EMOJIS[t.size]}</span><div class="task-mini-info"><div class="task-mini-name">${t.name}</div><div class="task-mini-meta">${t.mood} · ${t.time}</div></div><button class="task-complete-btn" onclick="event.stopPropagation();completeTask('${t.id}')" title="Complete">✓</button></div>`; }).join(''); }
+        function renderFullTaskList() { const el = document.getElementById('fullTaskList'); if (!el) return; if (!tasks.length) { el.innerHTML = '<div style="color:var(--text3);font-size:13px;padding:20px;text-align:center">Your jar is empty! Add some tasks 🍬</div>'; return } el.innerHTML = tasks.map(t => { const col = t.candyColor || MOOD_COLORS[t.mood]; const me = { fun: '🌸', study: '📘', health: '🌿', creative: '✨', urgent: '🔥', painful: '💀' }[t.mood]; const dl = t.deadline ? `<span style="color:var(--accent3)">📅 ${t.deadline}</span>` : ''; return `<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:11px 13px;margin-bottom:9px;display:flex;align-items:flex-start;gap:9px;transition:all 0.2s;cursor:pointer" onmouseenter="this.style.borderColor='var(--border2)'" onmouseleave="this.style.borderColor='var(--border)'"><span style="font-size:24px;line-height:1;filter:drop-shadow(0 2px 6px ${col.glow})">${SIZE_EMOJIS[t.size]}</span><div style="flex:1;min-width:0"><div style="font-size:13px;color:var(--text);font-weight:500;margin-bottom:3px">${t.name}</div><div style="font-size:10px;color:var(--text3);display:flex;gap:10px;flex-wrap:wrap">${me} ${t.mood} · ⏱ ${t.time} ${dl}</div>${t.notes ? `<div style="font-size:10px;color:var(--text2);margin-top:5px;font-style:italic">${t.notes}</div>` : ''}</div><button onclick="completeTask('${t.id}')" style="background:rgba(144,212,160,0.15);border:1px solid #90d4a0;border-radius:8px;color:#90d4a0;padding:5px 9px;font-size:10px;cursor:pointer;white-space:nowrap;font-family:'DM Sans',sans-serif">✓ Done</button></div>`; }).join(''); }
+
+        // ── PROGRESS ───────────────────────────────────────────────────────────────────
+        function renderProgress() { const el = document.getElementById('progressContent'); if (!el) return; const total = totalCompleted + completedCount; const pct = n => Math.min(100, Math.round(n)); const lv = getLevel(xpCurrent); el.innerHTML = `<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px;margin-bottom:10px"><div class="stat-card-grid"><div class="stat-card"><div class="big">${total}</div><div class="sm">Total Eaten 🍬</div></div><div class="stat-card"><div class="big">${rareCount}</div><div class="sm">Rare Candies ✦</div></div><div class="stat-card"><div class="big">${lv}</div><div class="sm">Level 🎮</div></div><div class="stat-card"><div class="big">${coins}</div><div class="sm">Coins 💰</div></div></div></div><div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px;margin-bottom:10px"><div class="panel-title">XP Progress — Level ${lv}</div><div class="prog-bar-wrap"><div class="prog-label"><span>Level ${lv} → ${lv + 1}</span><span>${getXPInLevel(xpCurrent)}/100 XP</span></div><div class="prog-track"><div class="prog-fill purple" style="width:${getXPInLevel(xpCurrent)}%"></div></div></div><div class="prog-bar-wrap"><div class="prog-label"><span>🍬 Candy Collector</span><span>${total}/10</span></div><div class="prog-track"><div class="prog-fill purple" style="width:${pct(total / 10 * 100)}%"></div></div></div><div class="prog-bar-wrap"><div class="prog-label"><span>⚡ Rush Master</span><span>${sugarRushCount}/5</span></div><div class="prog-track"><div class="prog-fill amber" style="width:${pct(sugarRushCount / 5 * 100)}%"></div></div></div><div class="prog-bar-wrap"><div class="prog-label"><span>✦ Rare Hunter</span><span>${rareCount}/10</span></div><div class="prog-track"><div class="prog-fill green" style="width:${pct(rareCount / 10 * 100)}%"></div></div></div><div class="prog-bar-wrap"><div class="prog-label"><span>🌟 Legend</span><span>${total}/100</span></div><div class="prog-track"><div class="prog-fill purple" style="width:${pct(total / 100 * 100)}%"></div></div></div></div><div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px"><div class="panel-title">Achievements</div>${COLLECTION_ITEMS.map(a => { const unlocked = collectionUnlocked.includes(a.id); return `<div class="achievement ${unlocked ? '' : 'ach-locked'}"><div class="ach-icon">${a.emoji}</div><div class="ach-info"><div class="ach-name">${a.name}</div><div class="ach-desc">${a.desc}</div></div>${unlocked ? '<span style="color:var(--accent);font-size:15px">✓</span>' : '<span style="color:var(--text3);font-size:10px">🔒</span>'}</div>`; }).join('')}</div>`; }
+
+        // ── COLLECTION ──────────────────────────────────────────────────────────────────
+        function checkAchievements() { const total = totalCompleted + completedCount; COLLECTION_ITEMS.forEach(a => { if (collectionUnlocked.includes(a.id)) return; let unlock = false; if (a.type === 'total' && total >= a.req) unlock = true; if (a.type === 'rush' && sugarRushCount >= a.req) unlock = true; if (unlock) { collectionUnlocked.push(a.id); localStorage.setItem('cj_collection', JSON.stringify(collectionUnlocked)); showNotif(a.emoji, 'Achievement: ' + a.name, 'var(--accent)'); } }); }
+        function renderCollection() { const el = document.getElementById('collectionContent'); if (!el) return; el.innerHTML = `<div style="font-size:12px;color:var(--text2);margin-bottom:12px">${collectionUnlocked.length}/${COLLECTION_ITEMS.length} candies unlocked</div><div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px"><div class="candy-grid">${COLLECTION_ITEMS.map(a => { const u = collectionUnlocked.includes(a.id); return `<div class="candy-collect ${u ? '' : 'locked'}" title="${a.desc}"><span class="ce">${a.emoji}</span><div class="cn">${a.name}</div>${u ? '<div class="cc">✓</div>' : '<div class="cc">🔒</div>'}</div>`; }).join('')}</div></div>`; }
+
+        // ── FRIENDS ────────────────────────────────────────────────────────────────────
+        const MOCK_FRIENDS = [{ name: 'Zara M.', avatar: '👩‍💻', color: '#f5a0c8', tasks: 7, done: 12, online: true, jar: '🫙' }, { name: 'Kai T.', avatar: '🧑‍🎨', color: '#90b4f5', tasks: 3, done: 28, online: true, jar: '🍯' }, { name: 'Priya S.', avatar: '👩‍🔬', color: '#90d4a0', tasks: 11, done: 5, online: false, jar: '🫙' }, { name: 'Luca R.', avatar: '👨‍💼', color: '#c8a0f0', tasks: 2, done: 41, online: false, jar: '🍯' }];
+        function renderFriends() { const el = document.getElementById('friendsContent'); if (!el) return; el.innerHTML = `<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px;margin-bottom:10px"><div class="panel-title">Friend Jars</div>${MOCK_FRIENDS.map(f => `<div class="friend-jar"><div class="friend-avatar" style="background:${f.color}22;border:1px solid ${f.color}44">${f.avatar}</div><div class="friend-info"><div class="friend-name">${f.name}</div><div class="friend-stat">🍬 ${f.tasks} in jar · ✅ ${f.done} eaten</div></div><span style="font-size:18px">${f.jar}</span>${f.online ? '<div class="online-dot"></div>' : ''}</div>`).join('')}</div><div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px;margin-bottom:10px"><div class="panel-title">Weekly Leaderboard 🏆</div>${[...MOCK_FRIENDS].sort((a, b) => b.done - a.done).map((f, i) => `<div style="display:flex;align-items:center;gap:9px;padding:5px 0;border-bottom:1px solid var(--border)"><span style="font-size:13px;width:18px;text-align:center">${['🥇', '🥈', '🥉', '4️⃣'][i]}</span><span style="font-size:15px">${f.avatar}</span><span style="flex:1;font-size:12px;color:var(--text)">${f.name}</span><span style="font-size:11px;color:var(--accent)">${f.done} 🍬</span></div>`).join('')}</div><div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px"><div class="panel-title">Invite Friends</div><div style="display:flex;gap:7px"><input readonly value="CANDY-${Math.random().toString(36).slice(2, 8).toUpperCase()}" style="flex:1;background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:6px 10px;color:var(--accent);font-size:11px;font-family:monospace;outline:none"><button onclick="navigator.clipboard.writeText(this.previousElementSibling.value)" style="background:rgba(192,160,240,0.2);border:1px solid var(--accent);border-radius:8px;color:var(--accent);padding:6px 11px;font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif">Copy</button></div></div>`; }
+
+        // ── NOTES ──────────────────────────────────────────────────────────────────────
+        function renderNotes() { const el = document.getElementById('notesContent'); if (!el) return; const klogHtml = knowledgeLog.length ? `<div style="margin-top:12px"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px">Knowledge Log ✦</div>${knowledgeLog.slice(-10).reverse().map(k => `<div class="klog-item">${k.text}<div class="klog-time">${new Date(k.time).toLocaleString()}</div></div>`).join('')}</div>` : ''; el.innerHTML = `<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:13px;margin-bottom:10px"><div class="panel-title">Quick Notes 📝</div><textarea class="notes-area" id="notesTextarea" placeholder="Jot down anything... ideas, reminders, thoughts ✨">${notes}</textarea><div style="display:flex;justify-content:space-between;align-items:center;margin-top:4px"><span style="font-size:10px;color:var(--text3)">${notes.length} chars</span><button onclick="saveNotes()" style="background:rgba(192,160,240,0.2);border:1px solid var(--accent);border-radius:8px;color:var(--accent);padding:5px 12px;font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif">💾 Save</button></div>${klogHtml}</div>`; document.getElementById('notesTextarea').addEventListener('input', function () { notes = this.value; }); }
+        function saveNotes() { notes = document.getElementById('notesTextarea').value; localStorage.setItem('cj_notes', notes); showNotif('💾', 'Notes saved!', 'var(--accent)'); }
+        function highlightCandy(id) { const el = document.querySelector(`.candy-item[data-id="${id}"]`); if (!el) return; el.classList.remove('bouncing'); el.style.transition = 'transform 0.35s cubic-bezier(0.34,1.56,0.64,1),filter 0.3s'; el.style.transform = 'scale(1.6)'; el.style.zIndex = 80; const task = tasks.find(t => t.id === id); const col = task?.candyColor || MOOD_COLORS[task?.mood || 'fun']; el.style.filter = `drop-shadow(0 0 16px ${col.glow})`; setTimeout(() => { el.style.transform = ''; el.style.zIndex = ''; el.style.filter = ''; el.classList.add('bouncing'); }, 1300); }
+
+        // ── FORTUNE ────────────────────────────────────────────────────────────────────
+        function drawFortune() { const btn = document.getElementById('fortuneBtn'); btn.disabled = true; btn.textContent = '✦ Revealed!'; const f = FORTUNES[Math.floor(Math.random() * FORTUNES.length)]; document.getElementById('fortuneIcon').textContent = f.icon; document.getElementById('fortuneQuote').textContent = f.quote; document.getElementById('fortuneAuthor').textContent = f.author; const fd = document.getElementById('fortuneDisplay'); fd.style.display = 'block'; fd.style.opacity = 0; fd.style.transition = 'opacity 0.5s'; setTimeout(() => fd.style.opacity = 1, 50); }
+        function setMood(el, m) { document.querySelectorAll('.mood-btn').forEach(b => b.classList.remove('active')); el.classList.add('active'); currentMood = m; document.getElementById('moodSuggestion').textContent = MOOD_SUGGESTIONS[m] || 'Keep going! 🍬'; }
+
+        // ── THEME ──────────────────────────────────────────────────────────────────────
+        function toggleThemeMenu() { document.getElementById('themeDropdown').classList.toggle('open') }
+        document.addEventListener('click', e => { if (!e.target.closest('.theme-picker')) document.getElementById('themeDropdown').classList.remove('open') });
+        function setTheme(t, el) { currentTheme = t; document.body.setAttribute('data-theme', t === 'default' ? '' : t); document.querySelectorAll('.theme-opt').forEach(o => o.classList.remove('active')); if (el) el.classList.add('active'); document.getElementById('themeDropdown').classList.remove('open'); }
+        function toggleRain() { rainEnabled = !rainEnabled; document.getElementById('rainBtn').textContent = rainEnabled ? '🌧' : '☀️'; document.getElementById('rainBtn').classList.toggle('active', rainEnabled); }
+        function toggleZen() { zenMode = !zenMode; document.body.classList.toggle('zen-mode', zenMode); document.getElementById('zenBtn').classList.toggle('active', zenMode); document.getElementById('zenBtn').textContent = zenMode ? '🧘 Exit' : '🧘'; }
+        document.addEventListener('keydown', e => { if (e.key === 'z' && !e.ctrlKey && !e.metaKey && e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') toggleZen(); });
+
+        // ── NAVIGATION ─────────────────────────────────────────────────────────────────
+        function setSideNav(el, view) { document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active')); el.classList.add('active'); document.querySelectorAll('.view').forEach(v => v.style.display = 'none'); const vEl = document.getElementById('view-' + view); if (vEl) vEl.style.display = 'flex'; currentView = view; if (view === 'tasks') renderFullTaskList(); if (view === 'progress') renderProgress(); if (view === 'collection') renderCollection(); if (view === 'friends') renderFriends(); if (view === 'notes') renderNotes(); }
+        function setSideNavById(view) { const el = document.querySelector(`.nav-item[data-tab="${view}"]`); if (el) setSideNav(el, view); }
+        function setTab(el, id) { document.querySelectorAll('.tab').forEach(t => t.classList.remove('active')); document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active')); el.classList.add('active'); document.getElementById(id).classList.add('active'); }
+
+        // ── TIMER ENGINE ───────────────────────────────────────────────────────────────
+        let timerMode = 'pomodoro', timerInterval = null, timerRunning = false;
+        let pomoPhase = 'focus', pomoFocusMin = 25, pomoBreakMin = 5, pomoRemaining = 25 * 60, pomoSessionsDone = 0;
+        function setTimerMode(m) { timerMode = m; document.querySelectorAll('.tmode-btn').forEach(b => b.classList.remove('active')); document.getElementById('tmode-' + m).classList.add('active'); document.getElementById('timer-pomo-view').style.display = m === 'pomodoro' ? 'block' : 'none'; document.getElementById('timer-custom-view').style.display = m === 'custom' ? 'block' : 'none'; document.getElementById('timer-stopwatch-view').style.display = m === 'stopwatch' ? 'block' : 'none'; if (m === 'pomodoro') initPomodoro(); }
+        function setPomoTime(f, b) { pomoFocusMin = f; pomoBreakMin = b; resetTimer(); }
+        function initPomodoro() { pomoRemaining = pomoFocusMin * 60; pomoPhase = 'focus'; updatePomoRing(); updatePomoDisplay(); renderPomoDots(); }
+        function updatePomoDisplay() { const m = Math.floor(pomoRemaining / 60), s = pomoRemaining % 60; document.getElementById('ringTime').textContent = String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0'); document.getElementById('ringLabel').textContent = pomoPhase === 'focus' ? 'Focus 🎯' : 'Break 🌸'; }
+        function updatePomoRing() { const total = (pomoPhase === 'focus' ? pomoFocusMin : pomoBreakMin) * 60; const pct = pomoRemaining / total; const circ = 2 * Math.PI * 68; document.getElementById('ringProg').style.strokeDashoffset = circ * (1 - pct); document.getElementById('ringProg').style.stroke = pomoRemaining <= 120 ? '#f09060' : 'var(--accent)'; }
+        function renderPomoDots() { const c = document.getElementById('pomoDots'); c.innerHTML = ''; for (let i = 0; i < 4; i++) { const d = document.createElement('div'); d.className = 'pomo-dot'; if (i < pomoSessionsDone) d.classList.add('done'); else if (i === pomoSessionsDone) d.classList.add('current'); c.appendChild(d); } }
+        function toggleTimer() { if (timerRunning) { clearInterval(timerInterval); timerRunning = false; document.getElementById('timerPlayBtn').textContent = '▶ Resume'; } else { timerRunning = true; document.getElementById('timerPlayBtn').textContent = '⏸ Pause'; timerInterval = setInterval(() => { pomoRemaining--; updatePomoDisplay(); updatePomoRing(); if (pomoRemaining <= 0) { clearInterval(timerInterval); timerRunning = false; document.getElementById('timerPlayBtn').textContent = '▶ Start'; onPomoPhaseEnd(); } }, 1000); } }
+        function onPomoPhaseEnd() { playBell(); if (pomoPhase === 'focus') { pomoSessionsDone = (pomoSessionsDone + 1) % 4; renderPomoDots(); xpCurrent += 20; coins += 5; localStorage.setItem('cj_xp', xpCurrent); localStorage.setItem('cj_coins', coins); updateXPBar(); updateCoinDisplay(); showNotif('🎯', 'Focus done! +20 XP +5💰', 'var(--accent)'); setTimeout(() => openSynthesis(), 800); addSessionLog('Focus ' + pomoFocusMin + 'min'); pomoPhase = 'break'; pomoRemaining = pomoBreakMin * 60; playBreakBell(); } else { pomoPhase = 'focus'; pomoRemaining = pomoFocusMin * 60; showNotif('🍅', 'Break over! Ready to focus?', '#f09060'); } updatePomoDisplay(); updatePomoRing(); }
+        function resetTimer() { clearInterval(timerInterval); timerRunning = false; pomoPhase = 'focus'; pomoRemaining = pomoFocusMin * 60; pomoSessionsDone = 0; document.getElementById('timerPlayBtn').textContent = '▶ Start'; updatePomoDisplay(); updatePomoRing(); renderPomoDots(); }
+        function skipPhase() { clearInterval(timerInterval); timerRunning = false; document.getElementById('timerPlayBtn').textContent = '▶ Start'; onPomoPhaseEnd(); }
+        // Custom timer
+        let customTimerRunning = false, customTimerInterval = null, customRemaining = 0, customTotal = 0;
+        function toggleCustomTimer() { if (customTimerRunning) { clearInterval(customTimerInterval); customTimerRunning = false; document.getElementById('customPlayBtn').textContent = '▶ Resume'; } else { const h = parseInt(document.getElementById('customHr').value) || 0; const m = parseInt(document.getElementById('customMin').value) || 0; const s = parseInt(document.getElementById('customSec').value) || 0; if (!customRemaining || customRemaining <= 0) { customRemaining = h * 3600 + m * 60 + s; customTotal = customRemaining; } if (customRemaining <= 0) return; customTimerRunning = true; document.getElementById('customPlayBtn').textContent = '⏸ Pause'; document.getElementById('customTimerLabel').textContent = 'Timer running...'; customTimerInterval = setInterval(() => { customRemaining--; updateCustomDisplay(); if (customRemaining <= 0) { clearInterval(customTimerInterval); customTimerRunning = false; document.getElementById('customPlayBtn').textContent = '▶ Start'; document.getElementById('customTimerLabel').textContent = "⏰ Time's up!"; playBell(); showNotif('⏰', 'Timer complete!', 'var(--accent)'); addSessionLog('Custom ' + (customTotal / 60).toFixed(0) + 'min'); } }, 1000); } }
+        function updateCustomDisplay() { const h = Math.floor(customRemaining / 3600); const m = Math.floor((customRemaining % 3600) / 60); const s = customRemaining % 60; const str = (h > 0 ? String(h).padStart(2, '0') + ':' : '') + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0'); document.getElementById('customTimerDisplay').textContent = str; document.getElementById('customTimerDisplay').style.color = customRemaining <= 120 && customRemaining > 0 ? '#f09060' : 'var(--text)'; }
+        function resetCustomTimer() { clearInterval(customTimerInterval); customTimerRunning = false; customRemaining = 0; customTotal = 0; document.getElementById('customPlayBtn').textContent = '▶ Start'; document.getElementById('customTimerDisplay').textContent = '00:00'; document.getElementById('customTimerLabel').textContent = 'Set your time above'; }
+        ['customHr', 'customMin', 'customSec'].forEach(id => { document.getElementById(id).addEventListener('input', () => { if (!customTimerRunning) { const h = parseInt(document.getElementById('customHr').value) || 0; const m = parseInt(document.getElementById('customMin').value) || 0; const s = parseInt(document.getElementById('customSec').value) || 0; customRemaining = h * 3600 + m * 60 + s; customTotal = customRemaining; updateCustomDisplay(); } }); });
+        // Stopwatch
+        let swRunning = false, swInterval = null, swMs = 0, swLaps = [];
+        function toggleStopwatch() { if (swRunning) { clearInterval(swInterval); swRunning = false; document.getElementById('swPlayBtn').textContent = '▶ Resume'; } else { swRunning = true; document.getElementById('swPlayBtn').textContent = '⏸ Pause'; swInterval = setInterval(() => { swMs += 100; updateSwDisplay(); }, 100); } }
+        function updateSwDisplay() { const h = Math.floor(swMs / 3600000); const m = Math.floor((swMs % 3600000) / 60000); const s = Math.floor((swMs % 60000) / 1000); const ds = Math.floor((swMs % 1000) / 100); document.getElementById('stopwatchDisplay').textContent = (h > 0 ? String(h).padStart(2, '0') + ':' : '') + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0') + '.' + ds; }
+        function resetStopwatch() { clearInterval(swInterval); swRunning = false; swMs = 0; swLaps = []; document.getElementById('swPlayBtn').textContent = '▶ Start'; document.getElementById('stopwatchDisplay').textContent = '00:00.0'; document.getElementById('lapList').innerHTML = ''; }
+        function lapStopwatch() { if (!swRunning && swMs === 0) return; swLaps.push(swMs); const h = Math.floor(swMs / 3600000), m = Math.floor((swMs % 3600000) / 60000), s = Math.floor((swMs % 60000) / 1000), ds = Math.floor((swMs % 1000) / 100); const str = (h > 0 ? String(h).padStart(2, '0') + ':' : '') + String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0') + '.' + ds; const item = document.createElement('div'); item.className = 'lap-item'; item.innerHTML = `<span>Lap ${swLaps.length}</span><span>${str}</span>`; document.getElementById('lapList').insertBefore(item, document.getElementById('lapList').firstChild); }
+        // Session log
+        let sessionLogs = [];
+        function addSessionLog(label) { sessionLogs.push({ label, time: Date.now() }); renderSessionLog(); }
+        function renderSessionLog() { const el = document.getElementById('sessionLog'); if (!el) return; el.innerHTML = sessionLogs.slice(-5).reverse().map(s => `<div class="session-item"><span>${s.label}</span><span>${new Date(s.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}</span></div>`).join(''); }
+
+        // ── RITUAL ─────────────────────────────────────────────────────────────────────
+        const RITUAL_STEPS = [{ title: '🧹 Clear the Deck', desc: 'Take 60 seconds to tidy your physical workspace. Put away distractions.', time: 60 }, { title: '💧 Hydration Check', desc: 'Grab a glass of water or your favorite drink. Good work starts with good fuel.', time: 30 }, { title: '🎯 Set Your Intent', desc: 'Type your single goal for this session below. One sentence, laser-focused.', time: null }];
+        let ritualStep = 0, ritualTimer = null;
+        function startRitual() { ritualStep = 0; document.getElementById('ritualOverlay').classList.add('open'); showRitualStep(0); }
+        function showRitualStep(i) { const step = RITUAL_STEPS[i]; document.getElementById('ritualStepNum').textContent = `STEP ${i + 1} OF ${RITUAL_STEPS.length}`; document.getElementById('ritualTitle').textContent = step.title; document.getElementById('ritualDesc').textContent = step.desc; document.getElementById('ritualIntentInput').style.display = i === 2 ? 'block' : 'none'; document.getElementById('ritualNextBtn').textContent = i < RITUAL_STEPS.length - 1 ? 'Next →' : 'Begin Session ✦'; for (let j = 0; j < 3; j++) { const d = document.getElementById('rdot' + j); d.classList.remove('done', 'active'); if (j < i) d.classList.add('done'); else if (j === i) d.classList.add('active'); } if (step.time) { let c = step.time; document.getElementById('ritualCountdown').style.display = 'block'; document.getElementById('ritualCountdown').textContent = c; clearInterval(ritualTimer); ritualTimer = setInterval(() => { c--; document.getElementById('ritualCountdown').textContent = c; if (c <= 0) { clearInterval(ritualTimer); playBell(); } }, 1000); } else { clearInterval(ritualTimer); document.getElementById('ritualCountdown').style.display = 'none'; } }
+        function ritualNext() { clearInterval(ritualTimer); if (ritualStep < RITUAL_STEPS.length - 1) { ritualStep++; showRitualStep(ritualStep); } else { sessionIntent = document.getElementById('ritualIntentInput').value.trim() || 'No intent set'; document.getElementById('ritualIntentInput').value = ''; document.getElementById('ritualOverlay').classList.remove('open'); document.getElementById('sessionIntentDisplay').textContent = '🎯 ' + sessionIntent; setTab(document.querySelector('.tab:nth-child(3)'), 'rt-timer'); showNotif('✦', 'Ritual complete! Timer started', 'var(--accent)'); setTimeout(() => { if (!timerRunning) toggleTimer(); }, 500); } }
+        function skipRitual() { clearInterval(ritualTimer); document.getElementById('ritualOverlay').classList.remove('open'); }
+
+        // ── SYNTHESIS ──────────────────────────────────────────────────────────────────
+        function openSynthesis() { document.getElementById('synthesisOverlay').classList.add('open'); document.getElementById('synthInput').value = ''; document.getElementById('synthCount').textContent = '0 / 10 words'; document.getElementById('synthInput').focus(); renderKlogDisplay(); }
+        function closeSynthesis() { document.getElementById('synthesisOverlay').classList.remove('open') }
+        document.getElementById('synthInput').addEventListener('input', function () { const words = this.value.trim().split(/\s+/).filter(Boolean).length; document.getElementById('synthCount').textContent = words + ' / 10 words'; document.getElementById('synthCount').style.color = words > 10 ? '#f09060' : 'var(--text3)'; });
+        function saveSynthesis() { const text = document.getElementById('synthInput').value.trim(); if (!text) { closeSynthesis(); return; } knowledgeLog.push({ text, time: Date.now() }); localStorage.setItem('cj_klog', JSON.stringify(knowledgeLog)); closeSynthesis(); showNotif('✦', 'Saved to Knowledge Log!', 'var(--accent)'); }
+        function renderKlogDisplay() { const el = document.getElementById('knowledgeLogDisplay'); if (!knowledgeLog.length) { el.innerHTML = ''; return; } el.innerHTML = '<div style="font-size:10px;color:var(--text3);text-align:left;margin-bottom:6px">Recent Entries</div><div class="knowledge-log">' + knowledgeLog.slice(-4).reverse().map(k => `<div class="klog-item">${k.text}<div class="klog-time">${new Date(k.time).toLocaleString()}</div></div>`).join('') + '</div>'; }
+
+        // ── INIT ───────────────────────────────────────────────────────────────────────
+        initPomodoro(); setTimerMode('pomodoro');
+        updateXPBar(); updateCoinDisplay(); updateStats(); updateJarFill();
+        refreshThemeLocks();
+        renderTrackList();
+        document.getElementById('view-jar').style.display = 'flex';
+        document.getElementById('view-jar').style.flexDirection = 'column';
+        document.getElementById('view-jar').style.alignItems = 'center';
+    </script>
+</body>
+
+</html>
